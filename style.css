@@ -384,6 +384,7 @@
 .vac-image-tg-container__image img {
   border-radius: 13px;
   max-height: 300px;
+  max-width: 100%;
 }
 
 .vac-image-tg-container__timestamp {

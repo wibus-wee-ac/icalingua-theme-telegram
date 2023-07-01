@@ -62,22 +62,31 @@ function modifyChatBox() {
   // 其中如果是我本人发的消息，信息 ID 为 0 & 用户为 'current'
   const messageUserList = [];
   messageList.forEach((message) => {
+    // id 就在 message 的 attribute 里面
+    const id = message.getAttribute('id');
     // 判断是否是“我”发的消息
     const isCurrent = message.classList.contains('vac-offset-current');
     if (isCurrent) {
       messageUserList.push({
-        id: 0,
+        id,
         name: 'current',
       });
     }
     // 如果不是“我”发的消息，那么我们需要获取发消息的用户 & 信息 ID
     else {
-      // id 就在 message 的 attribute 里面
-      const id = message.getAttribute('id');
       // 用户在 vac-message-box > vac-message-sender-avatar > el-avatar > img 的 src 里面.
-      const imgSrc = message.querySelector('img').getAttribute('src');
+      const imgSrc = message.querySelector('.el-avatar img');
+      if (!imgSrc) {
+        // 在私聊模式下，如果对方没有头像，那么 imgSrc 会是 null
+        // 这个时候我们就需要把这个消息的 name 都设置为 'friend'
+        messageUserList.push({
+          id,
+          name: "friend",
+        });
+        return;
+      }
       // 由于 imgSrc 是一个 url，我们需要从 url 里面提取出用户 (nk=xxx)
-      const name = imgSrc.match(/nk=(.*)/)[1];
+      const name = imgSrc.getAttribute('src').match(/nk=(.*)/)[1];
       messageUserList.push({
         id,
         name,
@@ -96,6 +105,9 @@ function modifyChatBox() {
 function mergeSameUserMessage(messageUserList) {
   let lastUser = null;
   messageUserList.forEach((messageUser, index) => {
+    if (messageUser.name === 'current') {
+      return;
+    }
     // 接着我们需要遍历这个列表，如果发现连续的用户是同一个人
     // 那么我们就需要把前面的头像都隐藏掉，只保留最后一个头像
     // 如果 lastUser 为空，那么我们就把 lastUser 设置为当前用户，然后继续循环
@@ -113,12 +125,22 @@ function mergeSameUserMessage(messageUserList) {
     if (!message) {
       return;
     }
-    const lastMessage = document.getElementById(messageUserList[index - 1].id);
-    lastMessage.querySelector('.el-avatar').style.opacity = 0;
-    const lastName = lastMessage.querySelector('.vac-message-container .vac-message-card .vac-text-username')
-    if (lastName) {
-      lastName.remove();
+    if (messageUserList[index - 1].name === 'current') {
+      return;
     }
+    const name = message.querySelector('.vac-message-container .vac-message-card .vac-text-username');
+    if (name) {
+      name.remove();
+    }
+    const lastMessage = document.getElementById(messageUserList[index - 1].id);
+    const lastMessageAvatar = lastMessage.querySelector('.el-avatar');
+    if (lastMessageAvatar) {
+      lastMessageAvatar.style.opacity = 0;
+    }
+    // const lastName = lastMessage.querySelector('.vac-message-container .vac-message-card .vac-text-username')
+    // if (lastName) {
+    //   lastName.remove();
+    // }
   })
 }
 
@@ -137,7 +159,7 @@ function betterImageDisplay(messageUserList) {
       return;
     }
     const messageImage = messageElement.querySelector('.vac-message-container .vac-message-card .vac-image-container');
-    if (!messageImage) {
+    if (!messageImage || !messageImage.querySelector('img')) {
       return;
     }
     const messageImageSrc = messageImage.querySelector('img').getAttribute('src');
