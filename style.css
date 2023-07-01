@@ -437,12 +437,13 @@ div[message-actions] {
   font-size: 10px;
   padding: 2px 5px;
 }
+
 /* sticker panel */
 .panel-right {
   box-shadow: 1px 0 8px 1px #0000001f !important;
   transition: all 0.2s ease-in-out;
   transform-origin: bottom right;
-  will-change: transform;
+  will-change: scale;
   border: none !important;
 }
 
@@ -452,18 +453,19 @@ div[message-actions] {
 
 .vac-fade-stickers-enter-active {
   transform-origin: bottom right;
-  animation: tickers-enter-active 0.3s ease-in-out;
+  will-change: scale;
+  /* animation: tickers-enter-active 0.2s ease-in-out; */
+  animation: scaleIn;
+  animation-duration: 0.2s;
 }
 
-@keyframes tickers-enter-active {
+@keyframes scaleIn {
   0% {
-    transform: scale(0);
-    opacity: 0;
+    scale: 0.03
   }
 
   100% {
-    transform: scale(1);
-    opacity: 1;
+    scale: 1
   }
 }
 
