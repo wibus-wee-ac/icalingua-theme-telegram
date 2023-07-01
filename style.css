@@ -241,6 +241,23 @@
   color: rgb(254, 254, 254) !important;
 }
 
+
+.vac-message-content {
+  font-size: 13px;
+}
+
+.vac-message-card .vac-message-content {
+  margin-right: 43px !important;
+}
+
+.vac-message-current .vac-message-content {
+  margin-right: 0 !important;
+}
+
+.vac-message-current>div>div>a {
+  color: rgb(254, 254, 254) !important;
+}
+
 .vac-card-date {
   background-color: var(--panel-background) !important;
   box-shadow: none !important;
@@ -253,11 +270,6 @@
   bottom: 5px;
   font-style: italic !important;
   opacity: .7 !important;
-}
-
-.vac-message-content {
-  margin-right: 43px !important;
-  font-size: 13px;
 }
 
 .vac-icon-scroll {
@@ -307,14 +319,14 @@
 }
 
 /* file upload */
-.vac-icon-textarea > :nth-child(2) {
+.vac-icon-textarea> :nth-child(2) {
   position: absolute;
   left: 10px;
 }
 
 .vac-textarea::-webkit-input-placeholder {
   color: rgb(153, 153, 153) !important;
-  font-size: 14px; 
+  font-size: 14px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -322,7 +334,8 @@
   transform: translateX(5px);
 }
 
-#vac-icon-emoji, #vac-icon-paperclip {
+#vac-icon-emoji,
+#vac-icon-paperclip {
   transition: all 0.2s ease-in-out;
   fill: rgb(153, 153, 153) !important;
   transform-origin: center center;
@@ -341,7 +354,8 @@
   opacity: 1;
 }
 
-.vac-svg-button:hover #vac-icon-emoji, .vac-svg-button:hover #vac-icon-paperclip {
+.vac-svg-button:hover #vac-icon-emoji,
+.vac-svg-button:hover #vac-icon-paperclip {
   fill: var(--chat-icon-color-emoji) !important;
 }
 
@@ -353,4 +367,12 @@
   --size: 25px;
   width: var(--size) !important;
   height: var(--size) !important;
+}
+
+.vac-card-window>pre {
+  background-color: rgb(244, 244, 244) !important;
+  border-radius: 13px !important;
+  padding: 15px !important;
+  margin: 10px 0 !important;
+  font-size: 12px !important;
 }
