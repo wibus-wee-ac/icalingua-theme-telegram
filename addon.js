@@ -198,6 +198,16 @@ function fixMessageContentWidth(messageUserList) {
     if (!messageElement) {
       return;
     }
+    const stickers = messageElement.querySelectorAll('.vac-message-container .vac-message-card div > div > span');
+    if (stickers && stickers.length > 1) {
+      stickers.forEach((sticker) => {
+        const messageContent = sticker.querySelector('.vac-message-content');
+        if (!messageContent) {
+          sticker.style.marginLeft = '-43px';
+          sticker.style.marginRight = '43px';
+        }
+      })
+    }
     const messageContent = messageElement.querySelector('.vac-message-container .vac-message-card .vac-message-content');
     if (!messageContent) {
       return;

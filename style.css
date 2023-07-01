@@ -226,7 +226,7 @@ div[message-actions] {
   position: relative;
 }
 
-.vac-message-card > .vac-reply-message {
+.vac-message-card>.vac-reply-message {
   margin-top: 5px;
 }
 
@@ -436,4 +436,83 @@ div[message-actions] {
   border-radius: 50px;
   font-size: 10px;
   padding: 2px 5px;
+}
+/* sticker panel */
+.panel-right {
+  box-shadow: 1px 0 8px 1px #0000001f !important;
+  transition: all 0.2s ease-in-out;
+  transform-origin: bottom right;
+  will-change: transform;
+  border: none !important;
+}
+
+.bg {
+  position: relative;
+}
+
+.vac-fade-stickers-enter-active {
+  transform-origin: bottom right;
+  animation: tickers-enter-active 0.3s ease-in-out;
+}
+
+@keyframes tickers-enter-active {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.panel-right div.head {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 50px !important;
+  min-height: 50px !important;
+  border-top: 1px solid #e1e4e8;
+  border-bottom: none !important;
+}
+
+.panel-right div.head a {
+  color: rgb(190, 190, 190) !important;
+}
+
+.opinion {
+  display: none;
+}
+
+.title {
+  width: initial !important;
+}
+
+.panel-right .title a {
+  margin: 0 !important;
+  font-weight: 500 !important;
+  font-size: 14px;
+  padding: 5px 10px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 20px;
+}
+
+.panel-right .title a.selected {
+  background-color: rgb(224, 224, 224) !important;
+  color: rgb(1, 1, 1) !important;
+}
+
+.grid {
+  position: absolute;
+  top: 10px;
+  bottom: 50px;
+  gap: 7px;
+}
+
+.grid>div img {
+  border: none !important;
 }
