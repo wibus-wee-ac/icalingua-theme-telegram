@@ -3,8 +3,12 @@
  * @references Telegram Desktop Style
  */
 
-body {
-  background-color: var(--panel-background) !important;
+ body {
+  background-color: var(--tg-panel-background) !important;
+}
+
+:root {
+  --tg-panel-background: rgb(244, 244, 244);
 }
 
 * {
@@ -12,7 +16,7 @@ body {
 }
 
 .el-aside {
-  background-color: var(--panel-background) !important;
+  background-color: var(--tg-panel-background) !important;
   color: rgb(162, 162, 162) !important;
   display: block !important;
   position: absolute;
@@ -98,7 +102,7 @@ body {
 
 
 .el-input__inner {
-  background-color: rgb(244, 244, 244) !important;
+  background-color: var(--tg-panel-background) !important;
   border: none !important;
   border-radius: 5px !important;
   height: 30px;
@@ -144,10 +148,14 @@ body {
 }
 
 .root:hover {
-  background-color: initial !important;
+  background-color: var(--tg-panel-background) !important;
 }
 
 .root .selected {
+  background-color: rgb(87 146 204) !important;
+}
+
+.root:hover .selected {
   background-color: rgb(87 146 204) !important;
 }
 
@@ -180,7 +188,7 @@ body {
 }
 
 .vac-col-messages {
-  background-color: var(--panel-background) !important;
+  background-color: var(--tg-panel-background) !important;
 }
 
 .vac-room-name {
@@ -203,9 +211,9 @@ body {
 }
 
 .vac-container-scroll {
-  background-color: var(--panel-background) !important;
-  margin-left: 10px;
-  margin-right: 10px;
+  background-color: var(--tg-panel-background) !important;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 div[message-actions] {
@@ -219,7 +227,7 @@ div[message-actions] {
 }
 
 .vac-message-card {
-  background-color: rgb(244, 244, 244) !important;
+  background-color: var(--tg-panel-background) !important;
   box-shadow: none !important;
   border-radius: 13px !important;
   padding: 5px 12px 5px 12px !important;
@@ -274,7 +282,7 @@ div[message-actions] {
 }
 
 .vac-card-date {
-  background-color: var(--panel-background) !important;
+  background-color: var(--tg-panel-background) !important;
   box-shadow: none !important;
   color: rgb(160, 160, 160) !important;
 }
@@ -329,18 +337,18 @@ div[message-actions] {
 
 .vac-box-footer {
   border-top: 1px solid rgb(221, 221, 221) !important;
-  background-color: var(--panel-background) !important;
+  background-color: var(--tg-panel-background) !important;
   padding: 5px 10px !important;
 }
 
 .vac-reply-container {
-  background-color: var(--panel-background) !important;
+  background-color: var(--tg-panel-background) !important;
   margin-bottom: 10px;
   padding: 5px 5px 0 10px;
 }
 
 .vac-reply-box {
-  background-color: var(--panel-background) !important;
+  background-color: var(--tg-panel-background) !important;
   border-radius: 0 !important;
   border-left: 2px solid rgb(131, 98, 206) !important;
 }
@@ -408,7 +416,7 @@ div[message-actions] {
 }
 
 .vac-card-window>pre {
-  background-color: rgb(244, 244, 244) !important;
+  background-color: var(--tg-panel-background) !important;
   border-radius: 13px !important;
   padding: 15px !important;
   margin: 10px 0 !important;
@@ -494,6 +502,10 @@ div[message-actions] {
   width: initial !important;
 }
 
+.panel-right .title {
+  border-radius: 0 0 10px 10px !important;
+}
+
 .panel-right .title a {
   margin: 0 !important;
   font-weight: 500 !important;
@@ -517,4 +529,91 @@ div[message-actions] {
 
 .grid>div img {
   border: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tg-panel-background: rgb(34, 34, 34);
+    --tg-border-color: rgb(68, 68, 68);
+  }
+
+  .head,
+  .vac-room-header,
+  .root {
+    background-color: var(--tg-panel-background) !important;
+  }
+
+  .root {
+    border-right: 0.3px solid var(--tg-border-color) !important;
+  }
+
+  .root::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 78%;
+    height: 1px;
+    z-index: 1;
+    background-color: var(--tg-border-color);
+  }
+
+  .el-aside {
+    border-width: 0.3px !important;
+    border-color: var(--tg-border-color) !important;
+  }
+
+  .chat-group .selected {
+    --selected-color: rgb(11 96 254) !important;
+  }
+
+
+  .root .selected {
+    background-color: rgb(6 74 192) !important;
+  }
+
+  .root:hover .selected {
+    background-color: rgb(6 74 192) !important;
+  }
+
+  .vac-box-footer {
+    border-color: var(--tg-border-color) !important;
+  }
+
+  .el-badge__content--info {
+    background-color: rgb(177 201 227) !important;
+  }
+
+  .el-badge__content {
+    color: rgb(1 1 1) !important;
+    border-color: transparent !important;
+  }
+
+  .vac-container-scroll {
+    background-color: rgb(23, 23, 23) !important;
+  }
+
+  .vac-message-card {
+    border: 0.5px solid rgb(68, 68, 68) !important;
+    background-color: rgb(47 47 47) !important;
+  }
+
+  .vac-message-card.vac-message-current {
+    border: none;
+    background-color: rgb(32 93 206) !important;
+    color: rgb(254 254 254) !important;
+  }
+
+  .el-input__inner {
+    background-color: rgb(47 47 47) !important;
+  }
+
+  .panel-right, .bg, .grid, .grid img, .grid>div, .panel-right .title, .panel-right .head {
+    background-color: rgb(47 47 47) !important;
+  }
+
+  .panel-right .title a.selected {
+    background-color: rgb(65, 65, 65) !important;
+    color: rgb(224, 224, 224) !important;
+  }
 }
