@@ -13,13 +13,13 @@ A Telegram-like theme based on [Icalingua++](https://github.com/Icalingua-plus-p
 
 ## Addon.js
 
-这个文件是用来帮助部分由于 DOM 结构原因无法直接通过改变 CSS 实现的效果的元素实现目标样式的。目前已经实现的功能有：
+This file is used to help some elements that cannot be directly implemented by changing CSS due to DOM structure to achieve the target style. The functions that have been implemented are:
 
-- [x] 获取 ChatGroup aside 的宽度以将 ChatGroup Aside 改动为 Telegram 风格的头部菜单栏。
-- [ ] 将多个来自同一联系人的消息合并为一条。
-- [ ] 移除前往回复信息图标并将其改为点击回复信息即可前往回复的样式。
-- [ ] 鼠标滑动回复信息
-- [ ] 鼠标滑动消息列表
+- [x] Get the width of ChatGroup aside to change ChatGroup Aside to the header menu bar in Telegram style.
+- [ ] Merge multiple messages from the same contact into one.
+- [ ] Remove the icon to reply to the message and change it to the style that you can reply to the message by clicking.
+- [ ] Mouse slide reply message
+- [ ] Mouse slide message list
 
 ## Preview
 
