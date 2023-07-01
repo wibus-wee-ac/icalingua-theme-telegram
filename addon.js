@@ -97,6 +97,8 @@ function modifyChatBox() {
   mergeSameUserMessage(messageUserList);
   // === Feat2: Better image display ===
   betterImageDisplay(messageUserList);
+  // === Fix1: Fix message content width ===
+  fixMessageContentWidth(messageUserList);
 }
 
 /**
@@ -184,6 +186,25 @@ function betterImageDisplay(messageUserList) {
     `;
     messageElement.querySelector('.vac-message-container .vac-message-card').style.display = 'none'; // 隐藏原来的消息
     messageElement.querySelector('.vac-message-container').appendChild(newMessageImageContainer); // 添加新的图片容器
+  })
+}
+
+/**
+ * 修复消息内容宽度
+ */
+function fixMessageContentWidth(messageUserList) {
+  messageUserList.forEach((message) => {
+    const messageElement = document.getElementById(message.id);
+    if (!messageElement) {
+      return;
+    }
+    const messageContent = messageElement.querySelector('.vac-message-container .vac-message-card .vac-message-content');
+    if (!messageContent) {
+      return;
+    }
+    if (!messageContent.innerHTML) {
+      messageContent.remove();
+    }
   })
 }
 
