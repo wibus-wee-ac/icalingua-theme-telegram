@@ -5,4 +5,4 @@ A Telegram-like theme based on [Icalingua++](https://github.com/Icalingua-plus-p
 
 Telegram Theme For Icalingua++ © Wibus, Released under AGPLv3. Created on Jul 1, 2023
 
-> [Personal Website](http://iucky.cn/) · [Blog](https://blog.iucky.cn/) · GitHub [@wibus-wee](https://github.com/wibus-wee/) · Telegram [@wibus✪](https://t.me/wibus_wee)
+> [Personal Website](http://wibus.ren/) · [Blog](https://blog.wibus.ren/) · GitHub [@wibus-wee](https://github.com/wibus-wee/) · Telegram [@wibus✪](https://t.me/wibus_wee)
