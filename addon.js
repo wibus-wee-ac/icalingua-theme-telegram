@@ -52,9 +52,9 @@ function listenRoomsPanelDragEvent() {
 }
 
 /**
- * 合并同一用户连续发送的消息
+ * 修改聊天框，对聊天框进行深度定制
  */
-function mergeMessageFromSameUser() {
+function modifyChatBox() {
   // 在同一用户连续发送的消息中，只保留最后一个头像
   const messageList = document.querySelectorAll('.vac-message-box');
   // 如果这个是“我”发的消息，在 vac-message-box 上会多一个 vac-offset-current 的 class
@@ -84,10 +84,20 @@ function mergeMessageFromSameUser() {
       });
     }
   })
-  // 接着我们需要遍历这个列表，如果发现连续的用户是同一个人
-  // 那么我们就需要把前面的头像都隐藏掉，只保留最后一个头像
+  // === Feat1: Merge Same User Message ===
+  mergeSameUserMessage(messageUserList);
+  // === Feat2: Better image display ===
+  betterImageDisplay(messageUserList);
+}
+
+/**
+ * 在同一用户连续发送的消息中，只保留最后一个头像
+ */
+function mergeSameUserMessage(messageUserList) {
   let lastUser = null;
   messageUserList.forEach((messageUser, index) => {
+    // 接着我们需要遍历这个列表，如果发现连续的用户是同一个人
+    // 那么我们就需要把前面的头像都隐藏掉，只保留最后一个头像
     // 如果 lastUser 为空，那么我们就把 lastUser 设置为当前用户，然后继续循环
     if (!lastUser) {
       lastUser = messageUser;
@@ -112,10 +122,53 @@ function mergeMessageFromSameUser() {
   })
 }
 
-function mergeMessageFromSameUserInterval() {
-  createConsole('ADDON', 'interval merge message from same user');
+/**
+ * Better image display
+ */
+function betterImageDisplay(messageUserList) {
+  messageUserList.forEach((message) => {
+    // 如果这个消息是图片消息，那么我们就需要重新制作一个容器，然后把图片放进去
+    const messageElement = document.getElementById(message.id);
+    if (!messageElement) {
+      return;
+    }
+    // 判断下生成了没有
+    if (messageElement.querySelector('.vac-message-container').querySelector('.vac-image-tg-container')) {
+      return;
+    }
+    const messageImage = messageElement.querySelector('.vac-message-container .vac-message-card .vac-image-container');
+    if (!messageImage) {
+      return;
+    }
+    const messageImageSrc = messageImage.querySelector('img').getAttribute('src');
+    // 这里会有一个问题，我们需要检测一下 messageElement 还有没有 vac-message-content 这个 class，因为它是一个文本消息
+    // 如果是文本消息，那么我们就不需要重新制作一个容器了
+    const isTextMessage = messageElement.querySelector('.vac-message-container .vac-message-card .vac-message-content');
+    if (isTextMessage) {
+      return;
+    }
+    // 接着我们就可以开始制作一个容器了
+    // 先获取一些必要的信息吧
+    const timestamp = messageElement.querySelector('.vac-message-container .vac-message-card .vac-text-timestamp').querySelector('span').innerText;
+    const newMessageImageContainer = document.createElement('div');
+    newMessageImageContainer.classList.add('vac-image-tg-container');
+    newMessageImageContainer.innerHTML = `
+      <div class="vac-image-tg-container__image">
+        <img src="${messageImageSrc}" alt="">
+      </div>
+      <div class="vac-image-tg-container__timestamp">
+        ${timestamp}
+      </div>
+    `;
+    messageElement.querySelector('.vac-message-container .vac-message-card').style.display = 'none'; // 隐藏原来的消息
+    messageElement.querySelector('.vac-message-container').appendChild(newMessageImageContainer); // 添加新的图片容器
+  })
+}
+
+function modifyChatBoxInterval() {
+  createConsole('ADDON', 'modify chat box interval');
   setInterval(() => {
-    mergeMessageFromSameUser();
+    modifyChatBox();
   }, 500);
 }
 
@@ -127,7 +180,7 @@ function init() {
   }
   injectCustomRootStyle(); // 注入自定义根样式
   listenRoomsPanelDragEvent(); // 监听侧边栏拖拽事件
-  mergeMessageFromSameUserInterval(); // 合并同一用户连续发送的消息
+  modifyChatBoxInterval(); // 修改聊天框
 }
 
 init();
