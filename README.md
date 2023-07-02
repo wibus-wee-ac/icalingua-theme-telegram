@@ -11,6 +11,20 @@ A Telegram-like theme based on [Icalingua++](https://github.com/Icalingua-plus-p
 - [ ] **🪓 Deep Modification.** Will merge me ssages from the same contact into one to reduce the interface occupancy.
 - [ ] **🎨 More Style.** Will add more styles to make Icalingua++ more like Telegram.
 
+## Installation
+
+### Automatic
+
+1. Download the latest release or clone this repository.
+2. Run `sh install.sh` in the root directory of this repository.
+3. Reroad Icalingua++.
+
+### Manual
+
+1. Download the latest release or clone this repository.
+2. Copy the `addon.js` & `style.css` to the [data directory](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus#%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95) of Icalingua++.
+3. Reroad Icalingua++.
+
 ## Addon.js
 
 This file is used to help some elements that cannot be directly implemented by changing CSS due to DOM structure to achieve the target style. The functions that have been implemented are:
