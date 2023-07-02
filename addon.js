@@ -198,6 +198,13 @@ function fixMessageContentWidth(messageUserList) {
     if (!messageElement) {
       return;
     }
+    const messageContent = messageElement.querySelector('.vac-message-container .vac-message-card .vac-message-content');
+    if (!messageContent) {
+      return;
+    }
+    if (!messageContent.innerHTML) {
+      messageContent.remove();
+    }
     const stickers = messageElement.querySelectorAll('.vac-message-container .vac-message-card div > div > span');
     if (stickers && stickers.length > 1) {
       stickers.forEach((sticker) => {
@@ -207,13 +214,6 @@ function fixMessageContentWidth(messageUserList) {
           sticker.style.marginRight = '43px';
         }
       })
-    }
-    const messageContent = messageElement.querySelector('.vac-message-container .vac-message-card .vac-message-content');
-    if (!messageContent) {
-      return;
-    }
-    if (!messageContent.innerHTML) {
-      messageContent.remove();
     }
   })
 }
