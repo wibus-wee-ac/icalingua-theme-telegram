@@ -231,12 +231,13 @@ div[message-actions] {
   background-color: var(--tg-chatbox-background) !important;
   box-shadow: none !important;
   border-radius: 20px !important;
-  padding: 10px 12px 5px 15px !important;
+  padding: 5px 12px 5px 15px !important;
   position: relative;
 }
 
 .vac-message-card>.vac-reply-message {
-  margin-left: 2px;
+  margin-left: 1px;
+  margin-top: 3px;
 }
 
 .vac-message-card a {
@@ -320,6 +321,11 @@ div[message-actions] {
 .vac-reply-username {
   color: rgb(131, 98, 206) !important;
   font-weight: 400 !important;
+}
+
+.vac-message-current .vac-reply-username, .vac-message-current .vac-reply-message {
+  color: rgb(254, 254, 254) !important;
+  border-color: rgb(254, 254, 254) !important;
 }
 
 .vac-reply-username>div {
