@@ -6,9 +6,12 @@ if [ "$(uname)" == "Darwin" ]; then
    echo "Done."
 # Check if the system is Linux
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-   cp ./src/* ~/.config/icalingua
+   cp -r ./src ~/.config/icalingua
    cp style.css ~/.config/icalingua
+   mv addon.js ~/.config/icalingua
+   mv main.js  ~/.config/icalingua
    echo "Done."
+
 else
    echo "Sorry, your system is not supported."
 fi

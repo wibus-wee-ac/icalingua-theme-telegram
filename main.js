@@ -1,8 +1,8 @@
-import { createConsole } from './utils.js';
-import { injectCustomRootStyle } from './core/inject-custom-root-style.js';
-import { listenRoomsPanelDragEvent } from './core/listen-rooms-panel-drag-event.js';
-import { modifyChatBoxInterval } from './core/modify-chat-box.js';
-import { refinedImageGallery } from './core/refined-image-gallery.js';
+import { createConsole } from './src/utils.js';
+import { injectCustomRootStyle } from './src/core/inject-custom-root-style.js';
+import { listenRoomsPanelDragEvent } from './src/core/listen-rooms-panel-drag-event.js';
+import { modifyChatBoxInterval } from './src/core/modify-chat-box.js';
+import { refinedImageGallery } from './src/core/refined-image-gallery.js';
 
 function init() {
   if (!document.getElementsByClassName('rooms-panel')[0].style.width) {
