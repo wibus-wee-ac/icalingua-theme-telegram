@@ -11,14 +11,17 @@ I like the style of Telegram Desktop very much, but in some areas it couldn't be
 
 ## Attentions
 
-1. You should **switch on** the "默认使用本地图片查看器" option in Icalingua++.
-
-Because of the limitation of Icalingua++, I changed the DOM structure of the message list, so I can't implement the function of clicking the image to enlarge it. So you should use the local image viewer to achieve this function.
+- _**You should **switch on** the "默认使用本地图片查看器" option in Icalingua++**._ Because of the limitation of Icalingua++, I changed the DOM structure of the message list, so I can't implement the function of clicking the image to enlarge it. So you should use the local image viewer to achieve this function. 
+- There are many limitations in Icalingua++, so there are still many functions that cannot be implemented. I will try my best to implement them, but I can't guarantee that all functions can be implemented.
 
 ## Features
 
 - **😄 Basic Style.** Port most of the Telegram style to Icalingua++.
-- **🪓 Deep Modification.** Will merge me ssages from the same contact into one to reduce the interface occupancy.
+- **🪓 Deep Modification.** Merge me ssages from the same contact into one to reduce the interface occupancy.
+  - **📷 Better Image Display.** Display the image in a better way.
+  - **🔗 Auto parse URL.** Auto parse URL to display the title and description of the website.
+  - **🧸 New Icons.** Replace the icons with Telegram-like style icons.
+  - **📜 Good-looking Modal.** Change the style of the modal to make it more beautiful.
 - **🎨 More Style.** Will add more styles to make Icalingua++ more like Telegram.
 
 ## Installation
@@ -43,12 +46,24 @@ This file is used to help some elements that cannot be directly implemented by c
 - [x] Merge multiple messages from the same contact into one.
 - [x] A better way to display the image. (Just for single image message)
 - [x] Remove the icon to reply to the message and change it to the style that you can reply to the message by clicking.
+- [ ] Replace the icons with Telegram-like style icons.
+- [ ] Change the style of the modal to make it more beautiful.
 - [ ] Mouse slide reply message
 - [ ] Mouse slide message list
 
+## tg-theme-plugin.js
+
+This file is used to help some elements that cannot be directly implemented by `addon.js`. The functions that have been implemented are:
+
+- [ ] Auto parse URL to display the title and description of the website.
+- [ ] TBD...
+
 ## Preview
 
-<img width="800" alt="CleanShot 2023-07-01 at 15 49 49@2x" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/ea76d7de-ec90-4d53-b675-9cf8e885ab22">
+|Light|Dark|
+|---|---|
+|<img alt="light" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/841d7e5e-5e82-4373-9983-f61903879c86">|<img  alt="dark" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/e07826bd-99a8-49fb-96b6-c7dad19cf16e">|
+
 
 ## Author
 
