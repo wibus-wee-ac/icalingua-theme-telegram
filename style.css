@@ -22,7 +22,7 @@
   display: block !important;
   position: absolute;
   /* 因为 DOM 结构的原因，无法让chat-group直接附着在上方，因此需要绝对定位 */
-  top: 47px;
+  top: 50px;
   left: 0;
   width: var(--rooms-panel-width) !important;
   z-index: 4 !important;
@@ -98,15 +98,15 @@
 }
 
 .rooms-panel .content {
-  margin-top: 33px;
+  margin-top: 36px;
 }
 
 
 .el-input__inner {
-  background-color: var(--tg-panel-background) !important;
+  background-color: var(--tg-chatbox-background) !important;
   border: none !important;
   border-radius: 5px !important;
-  height: 30px;
+  height: 37px;
   text-transform: none !important;
 }
 
@@ -119,7 +119,7 @@
 
 .el-input__prefix,
 .el-input__suffix {
-  top: -5px;
+  top: -1px;
   animation: input-prefix-suffix 0.2s ease-in-out;
 }
 
@@ -546,7 +546,7 @@ div[message-actions] {
   :root {
     --tg-panel-background: rgb(34, 34, 34);
     --tg-border-color: rgb(68, 68, 68);
-    --tg-chatbox-background: var(--tg-chatbox-background);
+    --tg-chatbox-background: rgb(47 47 47);
   }
 
   .head,
