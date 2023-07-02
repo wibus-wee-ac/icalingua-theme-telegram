@@ -27,14 +27,18 @@ export function betterImageDisplay(messageUserList) {
     // 接着我们就可以开始制作一个容器了
     // 先获取一些必要的信息吧
     const timestamp = messageElement.querySelector('.vac-message-container .vac-message-card .vac-text-timestamp').querySelector('span').innerText;
+    const current = message.name === 'current';
     const newMessageImageContainer = document.createElement('div');
     newMessageImageContainer.classList.add('vac-image-tg-container');
+    if (current) {
+      newMessageImageContainer.classList.add('vac-image-tg-container--current');
+    }
     newMessageImageContainer.innerHTML = `
       <div class="vac-image-tg-container__image">
         <img src="${messageImageSrc}" alt="">
       </div>
       <div class="vac-image-tg-container__timestamp">
-        ${timestamp}
+        ${timestamp.split(":").slice(0, 2).join(":")}
       </div>
     `;
     messageElement.querySelector('.vac-message-container .vac-message-card').style.display = 'none'; // 隐藏原来的消息
