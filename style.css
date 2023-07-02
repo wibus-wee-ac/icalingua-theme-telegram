@@ -3,12 +3,13 @@
  * @references Telegram Desktop Style
  */
 
-body {
+ body {
   background-color: var(--tg-panel-background) !important;
 }
 
 :root {
-  --tg-panel-background: rgb(244, 244, 244);
+  --tg-panel-background: rgb(255, 255, 255);
+  --tg-chatbox-background: rgb(245 245 245);
 }
 
 * {
@@ -227,15 +228,15 @@ div[message-actions] {
 }
 
 .vac-message-card {
-  background-color: var(--tg-panel-background) !important;
+  background-color: var(--tg-chatbox-background) !important;
   box-shadow: none !important;
-  border-radius: 13px !important;
-  padding: 5px 12px 5px 12px !important;
+  border-radius: 20px !important;
+  padding: 10px 12px 5px 15px !important;
   position: relative;
 }
 
 .vac-message-card>.vac-reply-message {
-  margin-top: 5px;
+  margin-left: 2px;
 }
 
 .vac-message-card a {
@@ -285,6 +286,10 @@ div[message-actions] {
   background-color: var(--tg-panel-background) !important;
   box-shadow: none !important;
   color: rgb(160, 160, 160) !important;
+}
+
+.vac-message-image-mod {
+  background-color: var(--tg-panel-background) !important;
 }
 
 .vac-text-timestamp {
@@ -535,6 +540,7 @@ div[message-actions] {
   :root {
     --tg-panel-background: rgb(34, 34, 34);
     --tg-border-color: rgb(68, 68, 68);
+    --tg-chatbox-background: var(--tg-chatbox-background);
   }
 
   .head,
@@ -590,12 +596,15 @@ div[message-actions] {
   }
 
   .vac-container-scroll {
-    background-color: rgb(23, 23, 23) !important;
+    background-color: rgb(27 27 27) !important
   }
 
   .vac-message-card {
     border: 0.5px solid rgb(68, 68, 68) !important;
-    background-color: rgb(47 47 47) !important;
+  }
+
+  .vac-message-image-mod {
+    background-color: var(--tg-chatbox-background) !important;
   }
 
   .vac-message-card.vac-message-current {
@@ -605,7 +614,7 @@ div[message-actions] {
   }
 
   .el-input__inner {
-    background-color: rgb(47 47 47) !important;
+    background-color: var(--tg-chatbox-background) !important;
   }
 
   .panel-right,
@@ -615,7 +624,7 @@ div[message-actions] {
   .grid>div,
   .panel-right .title,
   .panel-right .head {
-    background-color: rgb(47 47 47) !important;
+    background-color: var(--tg-chatbox-background) !important;
   }
 
   .panel-right .title a.selected {
@@ -627,5 +636,9 @@ div[message-actions] {
   }
   .vac-reply-username {
     color: rgb(254, 254, 254) !important;
+  }
+
+  .vac-reply-message {
+    border-color: rgb(254, 254, 254) !important;
   }
 }
