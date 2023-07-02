@@ -46,6 +46,7 @@ This file is used to help some elements that cannot be directly implemented by c
 - [x] Merge multiple messages from the same contact into one.
 - [x] A better way to display the image. (Just for single image message)
 - [x] Remove the icon to reply to the message and change it to the style that you can reply to the message by clicking.
+- [x] Unique style for the username.
 - [ ] Replace the icons with Telegram-like style icons.
 - [ ] Change the style of the modal to make it more beautiful.
 - [ ] Mouse slide reply message
