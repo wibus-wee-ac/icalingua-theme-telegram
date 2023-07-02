@@ -1,4 +1,12 @@
-# Telegram Theme For Icalingua++ <img width="200" align="right" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/563396b0-9211-409a-9136-74a6f3cad037" />
+# Telegram Theme For Icalingua++
+
+<a href="#gh-light-mode-only">
+<img align="right" width="200" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/563396b0-9211-409a-9136-74a6f3cad037"/>
+</a>
+
+<a href="#gh-dark-mode-only">
+<img align="right" width="200" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/115cdb16-88fa-4ba6-9a14-32b9ab669b1b"/>
+</a>
 
 
 A Telegram-like theme based on [Icalingua++](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus).
