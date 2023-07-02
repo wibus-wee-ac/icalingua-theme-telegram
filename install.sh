@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Check if the system is macOS
 if [ "$(uname)" == "Darwin" ]; then
-   cp ./src/* ~/Library/Application\ Support/icalingua
+   cp -r ./src/* ~/Library/Application\ Support/icalingua
    cp style.css ~/Library/Application\ Support/icalingua
    echo "Done."
 # Check if the system is Linux
