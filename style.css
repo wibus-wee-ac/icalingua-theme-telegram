@@ -231,7 +231,7 @@ div[message-actions] {
   background-color: var(--tg-chatbox-background) !important;
   box-shadow: none !important;
   border-radius: 20px !important;
-  padding: 5px 12px 5px 15px !important;
+  padding: 7px 14px 7px 14px !important;
   position: relative;
 }
 
@@ -245,7 +245,7 @@ div[message-actions] {
 }
 
 .vac-message-card.vac-message-current {
-  padding: 5px 56px 5px 12px !important;
+  padding: 8px 58px 8px 14px !important;
 }
 
 .vac-text-username {
