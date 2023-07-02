@@ -5,11 +5,21 @@ A Telegram-like theme based on [Icalingua++](https://github.com/Icalingua-plus-p
 🧪 Working in Progress
 </pre>
 
-## TODO
+## Motivation
 
-- [x] **😄 Basic Style.** Port most of the Telegram style to Icalingua++.
-- [ ] **🪓 Deep Modification.** Will merge me ssages from the same contact into one to reduce the interface occupancy.
-- [ ] **🎨 More Style.** Will add more styles to make Icalingua++ more like Telegram.
+I like the style of Telegram Desktop very much, but in some areas it couldn't be accessed. Instead, Icalingua++ is a great alternative to Telegram Desktop. So I decided to make a Telegram-like theme for Icalingua++.
+
+## Attentions
+
+1. You should **switch on** the "默认使用本地图片查看器" option in Icalingua++.
+
+Because of the limitation of Icalingua++, I changed the DOM structure of the message list, so I can't implement the function of clicking the image to enlarge it. So you should use the local image viewer to achieve this function.
+
+## Features
+
+- **😄 Basic Style.** Port most of the Telegram style to Icalingua++.
+- **🪓 Deep Modification.** Will merge me ssages from the same contact into one to reduce the interface occupancy.
+- **🎨 More Style.** Will add more styles to make Icalingua++ more like Telegram.
 
 ## Installation
 
