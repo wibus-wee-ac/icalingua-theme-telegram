@@ -12,7 +12,8 @@ I like the style of Telegram Desktop very much, but in some areas it couldn't be
 ## Attentions
 
 - _**You should **switch on** the "默认使用本地图片查看器" option in Icalingua++**._ Because of the limitation of Icalingua++, I changed the DOM structure of the message list, so I can't implement the function of clicking the image to enlarge it. So you should use the local image viewer to achieve this function. 
-- There are many limitations in Icalingua++, so there are still many functions that cannot be implemented. I will try my best to implement them, but I can't guarantee that all functions can be implemented.
+- It **forces** a lot of changes to the **DOM structure**, which can cause problems with some functions
+- Since we want to enhance the functionality, we may need to start a **child process**. If you **don't trust me**, you don't have to use this theme.
 
 ## Features
 
