@@ -1,8 +1,8 @@
-import { createConsole } from './icalingua-theme-telegram/utils.js';
-import { injectCustomRootStyle } from './icalingua-theme-telegram/core/inject-custom-root-style.js';
-import { listenRoomsPanelDragEvent } from './icalingua-theme-telegram/core/listen-rooms-panel-drag-event.js';
-import { modifyChatBoxInterval } from './icalingua-theme-telegram/core/modify-chat-box.js';
-import { refinedImageGallery } from './icalingua-theme-telegram/core/refined-image-gallery.js';
+import { createConsole } from './telegram-theme/utils.js';
+import { injectCustomRootStyle } from './telegram-theme/core/inject-custom-root-style.js';
+import { listenRoomsPanelDragEvent } from './telegram-theme/core/listen-rooms-panel-drag-event.js';
+import { modifyChatBoxInterval } from './telegram-theme/core/modify-chat-box.js';
+import { refinedImageGallery } from './telegram-theme/core/refined-image-gallery.js';
 
 function init() {
   if (!document.getElementsByClassName('rooms-panel')[0].style.width) {
