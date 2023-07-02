@@ -1,8 +1,11 @@
-export function injectScript(url, async) {
+export function injectScript(url, async, callback) {
   const script = document.createElement('script');
   script.src = url;
   script.async = async;
   document.head.appendChild(script);
+  if (callback) {
+    script.onload = callback;
+  }
 }
 
 export function injectCSS(url) {
