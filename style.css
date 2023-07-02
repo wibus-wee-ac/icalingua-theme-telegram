@@ -3,7 +3,7 @@
  * @references Telegram Desktop Style
  */
 
- body {
+body {
   background-color: var(--tg-panel-background) !important;
 }
 
@@ -608,12 +608,24 @@ div[message-actions] {
     background-color: rgb(47 47 47) !important;
   }
 
-  .panel-right, .bg, .grid, .grid img, .grid>div, .panel-right .title, .panel-right .head {
+  .panel-right,
+  .bg,
+  .grid,
+  .grid img,
+  .grid>div,
+  .panel-right .title,
+  .panel-right .head {
     background-color: rgb(47 47 47) !important;
   }
 
   .panel-right .title a.selected {
     background-color: rgb(65, 65, 65) !important;
     color: rgb(224, 224, 224) !important;
+  }
+  .vac-text-username>span:first-child {
+    color: rgb(48 211 58) !important;
+  }
+  .vac-reply-username {
+    color: rgb(254, 254, 254) !important;
   }
 }

@@ -18,7 +18,7 @@ This file is used to help some elements that cannot be directly implemented by c
 - [x] Get the width of ChatGroup aside to change ChatGroup Aside to the header menu bar in Telegram style.
 - [x] Merge multiple messages from the same contact into one.
 - [x] A better way to display the image. (Just for single image message)
-- [ ] Remove the icon to reply to the message and change it to the style that you can reply to the message by clicking.
+- [x] Remove the icon to reply to the message and change it to the style that you can reply to the message by clicking.
 - [ ] Mouse slide reply message
 - [ ] Mouse slide message list
 
