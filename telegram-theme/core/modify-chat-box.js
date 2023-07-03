@@ -3,6 +3,24 @@ import { mergeSameUserMessage } from '../functions/merge-same-user-message.js';
 import { betterImageDisplay } from '../functions/better-image-display.js';
 import { specialUsernameColor } from '../functions/special-username-color.js';
 // import { fixImageClickEvent } from '../functions/fix-image-click-event.js';
+import { fixMessageContentWidth } from '../functions/fix-message-content-width.js';
+
+function featuresFn(messageUserList) {
+  // === Feat1: Merge Same User Message ===
+  mergeSameUserMessage(messageUserList);
+  // === Feat2: Better image display ===
+  betterImageDisplay(messageUserList);
+  // === Feat3: Special Username Color ===
+  specialUsernameColor(messageUserList);
+}
+
+function fixsFn(messageUserList) {
+  // === Fix1: Fix message content width ===
+  fixMessageContentWidth(messageUserList);
+  // === Fix(Better Image Display): Fix click event was destroyed ===
+  // createConsole("FIX", "Fix click event was destroyed")
+  // fixImageClickEvent(messageUserList);
+}
 
 /**
  * 修改聊天框，对聊天框进行深度定制
@@ -46,16 +64,8 @@ export function modifyChatBox() {
       });
     }
   })
-  // === Feat1: Merge Same User Message ===
-  mergeSameUserMessage(messageUserList);
-  // === Feat2: Better image display ===
-  betterImageDisplay(messageUserList);
-  // === Fix(Better Image Display): Fix click event was destroyed ===
-  // fixImageClickEvent(messageUserList);
-  // === Feat3: Special Username Color ===
-  specialUsernameColor(messageUserList);
-  // === Fix1: Fix message content width ===
-  // fixMessageContentWidth(messageUserList);
+  featuresFn(messageUserList);
+  fixsFn(messageUserList);
 }
 
 

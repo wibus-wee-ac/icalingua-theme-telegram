@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Check if the system is macOS
 if [ "$(uname)" == "Darwin" ]; then
-   cp -r ./telegram-theme/* ~/Library/Application\ Support/icalingua
+   cp -r ./telegram-theme ~/Library/Application\ Support/icalingua
    cp style.css ~/Library/Application\ Support/icalingua
    cp addon.js ~/Library/Application\ Support/icalingua
    cp main.js ~/Library/Application\ Support/icalingua

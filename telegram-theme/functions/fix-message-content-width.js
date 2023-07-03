@@ -1,8 +1,7 @@
-
 /**
  * 修复消息内容宽度
  */
-function fixMessageContentWidth(messageUserList) {
+export function fixMessageContentWidth(messageUserList) {
   messageUserList.forEach((message) => {
     const messageElement = document.getElementById(message.id);
     if (!messageElement) {
