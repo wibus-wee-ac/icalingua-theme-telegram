@@ -1,5 +1,3 @@
-# Telegram Theme For Icalingua++
-
 <div>
   <a href="https://github.com/wibus-wee/icalingua-theme-telegram">
   <img align="right" width="200" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/563396b0-9211-409a-9136-74a6f3cad037#gh-light-mode-only" />
@@ -11,6 +9,7 @@
 
 </div>
 
+# Telegram Theme For Icalingua++
 
 一个基于 [Icalingua++](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus) 的 Telegram 风格主题。
 
@@ -20,7 +19,13 @@
 
 ## Motivation | 动机
 
-我非常喜欢 Telegram Desktop 的 UI，但是在很多时候我都没法访问 Telegram，并且地区使用习惯的原因，我很难使用 Telegram，而是使用 QQ。而 Icalingua++ 是一个很好的 QQ 替代品。所以我决定为 Icalingua++ 制作一个 Telegram 风格的主题。
+我非常喜欢 Telegram Desktop 的 UI，但是在很多时候我都没法访问 Telegram，并且地区使用习惯的原因，我很难使用 Telegram，而是使用 QQ。
+
+但是 Tencent QQ NT 版本的 UI 完全没有办法自由定制，即使定制成功了也是 HACK 进去的，对这款软件来说它并不合法。所以我决定使用 Icalingua++ 来实现这个主题。它完全可以实现 Telegram 的 UI，而且它是开源的，可以让更多的人使用。
+
+> 总结：**QQ NT 一坨屎，Icalingua++ 大大滴好！**
+
+但其实这个主题与其名曰主题，不如说是一个增强版的 Icalingua++，因为它不仅仅是一个主题，它还会增强 Icalingua++ 的功能与体验。
 
 ## Attentions | 注意事项
 
@@ -30,15 +35,15 @@
 
 ## Features | 特性
 
-- **😄 基础样式。** 将 Telegram 的大部分样式移植到 Icalingua++。
-- **🪓 深度修改。** 将同一联系人的多条消息合并为一条，以减少界面占用。
-  - **📷 更好的图片信息显示效果。** 以更好的方式显示图片信息。
-  - **🔗 自动解析 URL。** 自动解析 URL 以显示网站的标题和描述。
-  - **🧸 新图标。** 用 Telegram 风格的图标替换图标。
-  - **📜 漂亮的模态框。** 更改模态框的样式，使其更加美观。
-  - **🪩 不同的用户名颜色。** 为每个用户名分配不同的颜色，以便更好地区分不同的联系人。
-  - **🎈 良好的动效。** 为 Icalingua++ 移除不必要的动效以及添加更多合理的动效。
-- **🎨 更多样式。** 将添加更多样式，使 Icalingua++ 更像 Telegram。
+- **基础样式。** 将 Telegram 的大部分样式移植到 Icalingua++。
+- **深度修改。** 将同一联系人的多条消息合并为一条，以减少界面占用。
+  - **更好的图片信息显示效果。** 以更好的方式显示图片信息。
+  - **自动解析 URL。** 自动解析 URL 以显示网站的标题和描述。
+  - **新图标。** 用 Telegram 风格的图标替换图标。
+  - **漂亮的模态框。** 更改模态框的样式，使其更加美观。
+  - **不同的用户名颜色。** 为每个用户名分配不同的颜色，以便更好地区分不同的联系人。
+  - **良好的动效。** 为 Icalingua++ 移除不必要的动效以及添加更多合理的动效。
+- **更多样式。** 将添加更多样式，使 Icalingua++ 更像 Telegram。
 
 ## Installation | 安装
 
