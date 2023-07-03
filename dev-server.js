@@ -5,7 +5,7 @@ const watcher = ["addon.js", "main.js", "style.css"]
 
 watch("./", { recursive: true }, (eventType, filename) => {
   if (watcher.includes(filename) || filename.includes("telegram-theme")) {
-    execSync(`cp -r ${filename} ~/Library/Application\\ Support/icalingua`, { stdio: "inherit" });
+    execSync(`cp -r ${filename} ~/Library/Application\\ Support/icalingua/${filename}`)
     console.log(`${filename} has been updated`)
   }
 })

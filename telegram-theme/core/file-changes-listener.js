@@ -9,7 +9,7 @@ export function fileChangesListener() {
 
   fs.watch(window.theme.location, { recursive: true }, (eventType, filename) => {
     if (watcher.includes(filename) || filename.includes("telegram-theme")) {
-      console.log(`${filename} has been changed`);
+      // console.log(`${filename} has been changed`);
       if (filename.endsWith('.css')) {
         // console.log(`${filename} has been updated`)
         const oldStyleElement = document.querySelector(`link`);
