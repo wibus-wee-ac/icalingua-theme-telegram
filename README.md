@@ -12,66 +12,61 @@
 </div>
 
 
-A Telegram-like theme based on [Icalingua++](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus).
+一个基于 [Icalingua++](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus) 的 Telegram 风格主题。
 
 <pre align="center">
 🧪 Working in Progress
 </pre>
 
-## Motivation
+## Motivation | 动机
 
-I like the style of Telegram Desktop very much, but in some areas it couldn't be accessed. Instead, Icalingua++ is a great alternative to Telegram Desktop. So I decided to make a Telegram-like theme for Icalingua++.
+我非常喜欢 Telegram Desktop 的 UI，但是在很多时候我都没法访问 Telegram，并且地区使用习惯的原因，我很难使用 Telegram，而是使用 QQ。而 Icalingua++ 是一个很好的 QQ 替代品。所以我决定为 Icalingua++ 制作一个 Telegram 风格的主题。
 
-## Attentions
+## Attentions | 注意事项
 
-- _**You should **switch on** the "默认使用本地图片查看器" option in Icalingua++**._ Because of the limitation of Icalingua++, I changed the DOM structure of the message list, so I can't implement the function of clicking the image to enlarge it. So you should use the local image viewer to achieve this function. 
-- It **forces** a lot of changes to the **DOM structure**, which can cause problems with some functions
-- Since we want to enhance the functionality, we may need to start a **child process**. If you **don't trust me**, you don't have to use this theme.
+- 由于 Icalingua++ 的限制，我改变了消息列表的 DOM 结构，所以我暂时无法实现点击图片放大的功能。后续可能我会尝试重写灯箱来实现这个功能。[Issue #16](https://github.com/wibus-wee/icalingua-theme-telegram/issues/16)
+- 它**强制改变**了很多原本的**DOM结构**，这可能会导致一些功能出现问题，如果你发现了这些问题，欢迎提交 [Issue](https://github.com/wibus-wee/icalingua-theme-telegram/issues)。
+- 由于我们想要增强聊天功能，我们可能需要另外启动一个子进程来处理一些信息。如果你**不信任我 / 不信任仓库代码**，你可以不使用这个主题。
 
-## Features
+## Features | 特性
 
-- **😄 Basic Style.** Port most of the Telegram style to Icalingua++.
-- **🪓 Deep Modification.** Merge me ssages from the same contact into one to reduce the interface occupancy.
-  - **📷 Better Image Display.** Display the image in a better way.
-  - **🔗 Auto parse URL.** Auto parse URL to display the title and description of the website.
-  - **🧸 New Icons.** Replace the icons with Telegram-like style icons.
-  - **📜 Good-looking Modal.** Change the style of the modal to make it more beautiful.
-- **🎨 More Style.** Will add more styles to make Icalingua++ more like Telegram.
+- **😄 基础样式。** 将 Telegram 的大部分样式移植到 Icalingua++。
+- **🪓 深度修改。** 将同一联系人的多条消息合并为一条，以减少界面占用。
+  - **📷 更好的图片信息显示效果。** 以更好的方式显示图片信息。
+  - **🔗 自动解析 URL。** 自动解析 URL 以显示网站的标题和描述。
+  - **🧸 新图标。** 用 Telegram 风格的图标替换图标。
+  - **📜 漂亮的模态框。** 更改模态框的样式，使其更加美观。
+  - **🪩 不同的用户名颜色。** 为每个用户名分配不同的颜色，以便更好地区分不同的联系人。
+  - **🎈 良好的动效。** 为 Icalingua++ 移除不必要的动效以及添加更多合理的动效。
+- **🎨 更多样式。** 将添加更多样式，使 Icalingua++ 更像 Telegram。
 
-## Installation
+## Installation | 安装
 
-### Automatic
+### Automatic | 自动安装
 
-1. Download the latest release or clone this repository.
-2. Run `sh install.sh` in the root directory of this repository.
-3. Reroad Icalingua++.
+1. 下载最新的发布版本或克隆这个仓库。
+2. 在这个仓库的根目录下运行 `sh install.sh`。
+3. 重启 Icalingua++。
 
-### Manual
+### Manual | 手动安装
 
-1. Download the latest release or clone this repository.
-2. Copy the `addon.js` & `style.css` to the [data directory](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus#%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95) of Icalingua++.
-3. Reroad Icalingua++.
+1. 下载最新的发布版本或克隆这个仓库。
+2. 将 `addon.js`, `style.css`, `./telegram-theme`, `main.js` 复制到 Icalingua++ 的[数据目录](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus#%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95)
+3. 重启 Icalingua++。
 
 ## Addon.js
 
-This file is used to help some elements that cannot be directly implemented by changing CSS due to DOM structure to achieve the target style. The functions that have been implemented are:
+这个文件用于帮助一些由于 DOM 结构的原因无法直接通过改变 CSS 实现目标样式的元素。已经实现的功能有：
 
-- [x] Get the width of ChatGroup aside to change ChatGroup Aside to the header menu bar in Telegram style.
-- [x] Merge multiple messages from the same contact into one.
-- [x] A better way to display the image. (Just for single image message)
-- [x] Remove the icon to reply to the message and change it to the style that you can reply to the message by clicking.
-- [x] Unique style for the username.
-- [ ] Replace the icons with Telegram-like style icons.
-- [ ] Change the style of the modal to make it more beautiful.
-- [ ] Mouse slide reply message
-- [ ] Mouse slide message list
+- [x] 获取 ChatGroup 的宽度以改变 ChatGroup Aside 为 Telegram 风格的头部菜单栏。
+- [x] 合并同一联系人的多条消息为一条。
+- [x] 更好的图片信息显示效果。（仅针对单张图片消息）
+- [x] 移除回复消息的图标并改为点击即可回复消息的样式。
+- [x] 为每个用户名分配不同的颜色。
+- [ ] 用 Telegram 风格的图标替换图标。
+- [ ] 更改模态框的样式，使其更加美观。
+- [ ] 鼠标滑动以回复消息
 
-## tg-theme-plugin.js
-
-This file is used to help some elements that cannot be directly implemented by `addon.js`. The functions that have been implemented are:
-
-- [ ] Auto parse URL to display the title and description of the website.
-- [ ] TBD...
 
 ## Preview
 
