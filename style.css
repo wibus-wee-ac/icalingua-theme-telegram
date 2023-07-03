@@ -21,7 +21,6 @@ body {
   color: rgb(162, 162, 162) !important;
   display: block !important;
   position: absolute;
-  /* å› ä¸º DOM ç»“æž„çš„åŽŸå› ï¼Œæ— æ³•è®©chat-groupç›´æŽ¥é™„ç€åœ¨ä¸Šæ–¹ï¼Œå› æ­¤éœ€è¦ç»å¯¹å®šä½ */
   top: 50px;
   left: 0;
   width: var(--rooms-panel-width) !important;
@@ -29,6 +28,12 @@ body {
   padding: 0 !important;
   border-bottom: 1px solid rgb(221, 221, 221) !important;
   border-right: 1px solid rgb(221, 221, 221) !important;
+}
+
+@media (max-width: 720px) {
+  .el-aside {
+    width: 100% !important;
+  }
 }
 
 .el-aside .head {
