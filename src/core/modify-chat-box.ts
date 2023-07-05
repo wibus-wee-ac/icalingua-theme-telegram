@@ -1,11 +1,11 @@
-import { createConsole } from '../utils.js';
-import { mergeSameUserMessage } from '../functions/merge-same-user-message.js';
-import { betterImageDisplay } from '../functions/better-image-display.js';
-import { specialUsernameColor } from '../functions/special-username-color.js';
-// import { fixImageClickEvent } from '../functions/fix-image-click-event.js';
-import { fixMessageContentWidth } from '../functions/fix-message-content-width.js';
+import { betterImageDisplay } from "../functions/better-image-display";
+import { fixMessageContentWidth } from "../functions/fix-message-content-width";
+import { mergeSameUserMessage } from "../functions/merge-same-user-message";
+import { specialUsernameColor } from "../functions/special-username-color";
+import { IMessageUserList } from "../types";
+import { createConsole } from "../utils";
 
-function featuresFn(messageUserList) {
+function featuresFn(messageUserList: IMessageUserList) {
   // === Feat1: Merge Same User Message ===
   mergeSameUserMessage(messageUserList);
   // === Feat2: Better image display ===
@@ -14,7 +14,7 @@ function featuresFn(messageUserList) {
   specialUsernameColor(messageUserList);
 }
 
-function fixsFn(messageUserList) {
+function fixsFn(messageUserList: IMessageUserList) {
   // === Fix1: Fix message content width ===
   fixMessageContentWidth(messageUserList);
   // === Fix(Better Image Display): Fix click event was destroyed ===
@@ -31,10 +31,10 @@ export function modifyChatBox() {
   // 如果这个是“我”发的消息，在 vac-message-box 上会多一个 vac-offset-current 的 class
   // 接着我们需要构造一个列表，列表内储存着发消息的用户、信息 ID。
   // 其中如果是我本人发的消息，信息 ID 为 0 & 用户为 'current'
-  const messageUserList = [];
+  const messageUserList = [] as IMessageUserList;
   messageList.forEach((message) => {
     // id 就在 message 的 attribute 里面
-    const id = message.getAttribute('id');
+    const id = message.getAttribute('id')!;
     // 判断是否是“我”发的消息
     const isCurrent = message.classList.contains('vac-offset-current');
     if (isCurrent) {
@@ -57,7 +57,7 @@ export function modifyChatBox() {
         return;
       }
       // 由于 imgSrc 是一个 url，我们需要从 url 里面提取出用户 (nk=xxx)
-      const name = imgSrc.getAttribute('src').match(/nk=(.*)/)[1];
+      const name = imgSrc.getAttribute('src')!.match(/nk=(.*)/)![1];
       messageUserList.push({
         id,
         name,
