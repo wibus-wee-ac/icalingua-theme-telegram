@@ -47,3 +47,9 @@ jobs:
 
       - name: Build
         run: nr build
+      
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: icalingua-theme-telegram-${{ github.sha }}.zip
+          path: dist

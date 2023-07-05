@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "unbuild",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "hook:done": "sh .github/build_done.sh"
   },
   "exports": {
     ".": {
