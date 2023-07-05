@@ -6,6 +6,6 @@ window.onload = function () {
   }
   const refineScript = document.createElement('script');
   refineScript.type = 'module';
-  refineScript.src = scriptElement.replace('addon.js', 'main.js');
+  refineScript.src = scriptElement.replace('addon.js', 'main.mjs');
   document.head.appendChild(refineScript);
 }
