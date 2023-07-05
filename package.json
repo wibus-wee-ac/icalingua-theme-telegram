@@ -4,7 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "typecheck": "tsc --noEmit"
   },
   "exports": {
     ".": {
