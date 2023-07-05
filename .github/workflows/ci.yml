@@ -51,10 +51,10 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: icalingua-theme-telegram-${{ github.sha }}.zip
+          name: icalingua-theme-telegram.zip
           path: dist
       - name: Zip
-        run: zip -r icalingua-theme-telegram-${{ github.sha }}.zip dist
+        run: zip -r icalingua-theme-telegram.zip dist
       - name: Upload a Build Artifact
         if: github.ref == 'refs/heads/main'
         uses: WebFreak001/deploy-nightly@v1.1.0
@@ -63,7 +63,7 @@ jobs:
         with:
           upload_url: https://uploads.github.com/repos/wibus-wee/icalingua-theme-telegram/releases/111083577/assets{?name,label}
           release_id: 111083577
-          asset_path: ./icalingua-theme-telegram-${{ github.sha }}.zip
+          asset_path: ./icalingua-theme-telegram.zip
           asset_name: icalingua-theme-telegram-$$.zip
           asset_content_type: application/zip
           max_releases: 7
