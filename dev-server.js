@@ -1,7 +1,7 @@
 import { execSync } from "child_process";
 import { watch } from "fs";
 
-const watcher = ["addon.js", "main.js", "style.css"]
+const watcher = ["addon.js", "style.scss"]
 
 watch("./", { recursive: true }, (eventType, filename) => {
   if (watcher.includes(filename) || filename.includes("src")) {
