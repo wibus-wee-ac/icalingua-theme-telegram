@@ -45,7 +45,8 @@ export function getRootStyle(key: any) {
 }
 
 export function getRoomsPanelWidth() {
-  return (document.getElementsByClassName("rooms-panel")[0] as HTMLElement).style.width;
+  return (document.getElementsByClassName("rooms-panel")[0] as HTMLElement)
+    .style.width;
 }
 
 export function createConsole(code: string, desc: string) {
@@ -55,3 +56,20 @@ export function createConsole(code: string, desc: string) {
     "background:unset;color:unset;"
   );
 }
+
+export function fork(path: string, args: string[] = []) {
+  console.log(`fork ${path} ${args.join(" ")}`);
+  
+  return new Promise((resolve, reject) => {
+    const child_process = require("child_process");
+    const forked = child_process.fork(path, args, { silent: true });
+    forked.on("message", (msg: any) => {
+      resolve(msg);
+    });
+    forked.on("error", (err: any) => {
+      reject(err);
+    });
+  });
+}
+// @ts-ignore
+window.fork = fork;
