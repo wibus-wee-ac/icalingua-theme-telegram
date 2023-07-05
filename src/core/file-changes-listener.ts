@@ -7,7 +7,7 @@ export function fileChangesListener() {
   // If it is a css file, re-append the CSS file.
   // https://github.com/wibus-wee/icalingua-theme-telegram/issues/15
   if (!window.theme.dev) return;
-  fs.watch(window.theme.location, { recursive: true }, (eventType, filename) => {
+  fs.watch(window.theme.location, { recursive: true }, (eventType: any, filename: string) => {
     if (watcher.includes(filename) || filename.includes("telegram-theme")) {
       // console.log(`${filename} has been changed`);
       if (filename.endsWith('.css')) {

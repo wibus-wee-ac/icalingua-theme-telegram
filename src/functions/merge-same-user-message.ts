@@ -1,9 +1,10 @@
+import { IMessageUser, IMessageUserList } from "../types";
 
 /**
  * 在同一用户连续发送的消息中，只保留最后一个头像
  */
-export function mergeSameUserMessage(messageUserList) {
-  let lastUser = null;
+export function mergeSameUserMessage(messageUserList: IMessageUserList) {
+  let lastUser = null as null | IMessageUser;
   messageUserList.forEach((messageUser, index) => {
     if (messageUser.name === 'current') {
       return;
@@ -33,9 +34,12 @@ export function mergeSameUserMessage(messageUserList) {
       name.remove();
     }
     const lastMessage = document.getElementById(messageUserList[index - 1].id);
-    const lastMessageAvatar = lastMessage.querySelector('.el-avatar');
+    if (!lastMessage) {
+      return;
+    }
+    const lastMessageAvatar = lastMessage.querySelector('.el-avatar') as HTMLDivElement;
     if (lastMessageAvatar) {
-      lastMessageAvatar.style.opacity = 0;
+      lastMessageAvatar.style.opacity = "0";
     }
     // const lastName = lastMessage.querySelector('.vac-message-container .vac-message-card .vac-text-username')
     // if (lastName) {

@@ -4,9 +4,23 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "unbuild"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/main.mjs"
+    }
+  },
+  "main": "./dist/main.mjs",
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.3.3",
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1"
+  }
 }

@@ -1,7 +1,9 @@
+import { IMessageUserList } from "../types";
+
 /**
  * special username color
  */
-export function specialUsernameColor(messageUserList) {
+export function specialUsernameColor(messageUserList: IMessageUserList) {
   messageUserList.forEach((message) => {
     const messageElement = document.getElementById(message.id);
     if (!messageElement) {
@@ -12,15 +14,15 @@ export function specialUsernameColor(messageUserList) {
       return;
     }
     const color = calculateColor(message.name);
-    const messageUsernameSpan = messageUsername.querySelector('span:first-child');
+    const messageUsernameSpan = messageUsername.querySelector('span:first-child') as HTMLSpanElement;
     if (messageUsernameSpan) {
       messageUsernameSpan.style.color = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
     }
   })
 }
 
-function calculateColor(qqID) {
-  const number = qqID.toString().replace(/\D/g, '');
+function calculateColor(qqID: string) {
+  const number = Number(qqID.toString().replace(/\D/g, ''));
 
   // 进行一系列复杂的计算操作
   const calculationResult1 = performCalculation(number, 1);
@@ -41,7 +43,7 @@ function calculateColor(qqID) {
   return [redComponent, greenComponent, blueComponent];
 }
 
-function performCalculation(number, operation) {
+function performCalculation(number: number, operation: number) {
   // 在这里执行更复杂的计算操作
   if (operation === 1) {
     return Math.sin(number) * 500;
@@ -54,7 +56,7 @@ function performCalculation(number, operation) {
   }
 }
 
-function mapToRange(value, inMin, inMax, outMin, outMax) {
+function mapToRange(value: number, inMin: number, inMax: number, outMin: number, outMax: number) {
   // 将值从输入范围映射到输出范围
   return Math.abs(((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin);
 }

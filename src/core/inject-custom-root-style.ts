@@ -1,5 +1,4 @@
-import { createConsole } from '../utils.js';
-import { getRoomsPanelWidth } from '../utils.js';
+import { createConsole, getRoomsPanelWidth } from "../utils";
 
 export function injectCustomRootStyle() {
   const roomsPanelWidth = getRoomsPanelWidth();
