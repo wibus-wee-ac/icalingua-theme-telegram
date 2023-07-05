@@ -42,7 +42,7 @@
   - **新图标。** 用 Telegram 风格的图标替换图标。
   - **漂亮的模态框。** 更改模态框的样式，使其更加美观。
   - **不同的用户名颜色。** 为每个用户名分配不同的颜色，以便更好地区分不同的联系人。
-  - **良好的动效。** 为 Icalingua++ 移除不必要的动效以及添加更多合理的动效。
+  - **良好的动效。** 为 Icalingua++ 移除与主题不和谐的动效以及添加更多合理的动效。
 - **更多样式。** 将添加更多样式，使 Icalingua++ 更像 Telegram。
 - **更好的开发体验。** 自动重载样式和页面，以便开发者更好地开发主题。
 
@@ -50,14 +50,14 @@
 
 ### Automatic | 自动安装
 
-1. 下载最新的发布版本或克隆这个仓库。
-2. 在这个仓库的根目录下运行 `sh install.sh`。
+1. 下载最新的发布版本或从 Actions 下载最新的构建版本。
+2. 在解压缩包后的目录下运行 `sh install.sh`。
 3. 重启 Icalingua++。
 
 ### Manual | 手动安装
 
-1. 下载最新的发布版本或克隆这个仓库。
-2. 将 `addon.js`, `style.css`, `./telegram-theme`, `main.js` 复制到 Icalingua++ 的[数据目录](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus#%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95)
+1. 下载最新的发布版本或从 Actions 下载最新的构建版本。
+2. 将 `addon.js`, `style.css`, `main.js` 复制到 Icalingua++ 的[数据目录](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus#%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95)
 3. 重启 Icalingua++。
 
 ## Addon.js
