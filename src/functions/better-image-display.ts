@@ -56,6 +56,10 @@ export function betterImageDisplay(messageUserList: IMessageUserList) {
         ${timestamp.split(":").slice(0, 2).join(":")}
       </div>
     `;
+    // Thanks to @dmlgzs for this fix: https://github.com/wibus-wee/icalingua-theme-telegram/issues/21#issuecomment-1621200630
+    newMessageImageContainer.onclick = () => {
+      require('electron').ipcRenderer.send('openImage', messageImageSrc);
+    };
     (
       messageElement.querySelector(
         ".vac-message-container .vac-message-card"
