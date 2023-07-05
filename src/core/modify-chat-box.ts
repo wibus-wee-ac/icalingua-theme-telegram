@@ -2,6 +2,7 @@ import { betterImageDisplay } from "../functions/better-image-display";
 import { enhanceStickersDisplay } from "../functions/enhance-stickers-display";
 import { fixMessageContentWidth } from "../functions/fix-message-content-width";
 import { mergeSameUserMessage } from "../functions/merge-same-user-message";
+import { parseOpengraphMeta } from "../functions/parse-opengraph-meta";
 import { specialUsernameColor } from "../functions/special-username-color";
 import { IMessageUserList } from "../types";
 import { createConsole } from "../utils";
@@ -15,6 +16,8 @@ function featuresFn(messageUserList: IMessageUserList) {
   specialUsernameColor(messageUserList);
   // === Feat4: Enhance Stickers Display ===
   enhanceStickersDisplay(messageUserList);
+  // === Feat5: Parse OpenGraph Meta ===
+  parseOpengraphMeta(messageUserList);
 }
 
 function fixsFn(messageUserList: IMessageUserList) {

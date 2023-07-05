@@ -18,6 +18,7 @@ function cacheFiles(dir) {
   })
 }
 cacheFiles(path.resolve(pwd, "./src"))
+cacheFiles(path.resolve(pwd, "./services"))
 watcher.forEach((file) => {
   // consola.info(`${chalk.cyan("[Cache]")} Caching ${chalk.green(file)}...`)
   cache[`${path.resolve(pwd)}/${file}`] = readFileSync(`${file}`, { encoding: "utf-8" })
@@ -26,7 +27,7 @@ watcher.forEach((file) => {
 consola.info(`${chalk.cyan("[Cache]")} Caching complete\n`);
 
 watch("./", { recursive: true }, (eventType, filename) => {
-  if (watcher.includes(filename) || filename.includes("src")) {
+  if (watcher.includes(filename) || filename.includes("src") || filename.includes("services")) {
     // 比对文件内容是否发生变化
     if (cache[`${path.resolve(pwd)}/${filename}`] === readFileSync(`${path.resolve(pwd)}/${filename}`, { encoding: "utf-8" })) {
       return

@@ -2,7 +2,7 @@ import { execSync } from "child_process";
 import { defineBuildConfig } from "unbuild";
 
 export default defineBuildConfig({
-  entries: ["./src/main"],
+  entries: ["./src/main", "./services/opengraph"],
   declaration: false,
   clean: true,
   rollup: {

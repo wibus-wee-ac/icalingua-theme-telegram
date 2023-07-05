@@ -28,5 +28,8 @@
     "sass": "^1.63.6",
     "typescript": "^5.1.6",
     "unbuild": "^1.2.1"
+  },
+  "dependencies": {
+    "open-graph-scraper": "^6.2.1"
   }
 }
