@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node dev-server.js",
-    "build": "unbuild",
+    "build": "rollup -c && npm run hook:done",
     "typecheck": "tsc --noEmit",
     "hook:done": "sh .github/build_done.sh"
   },
@@ -25,11 +25,13 @@
     "@types/node": "^20.3.3",
     "chalk": "^5.3.0",
     "consola": "^3.2.2",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-ts": "^3.2.0",
     "sass": "^1.63.6",
-    "typescript": "^5.1.6",
-    "unbuild": "^1.2.1"
+    "typescript": "^5.1.6"
   },
   "dependencies": {
-    "open-graph-scraper": "^6.2.1"
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "rollup": "^3.26.1"
   }
 }

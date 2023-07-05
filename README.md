@@ -50,13 +50,13 @@
 
 ### Automatic | 自动安装
 
-1. 下载最新的发布版本或从 Actions 下载最新的构建版本。
+1. 下载最新的发布版本或从 [CI Release](https://github.com/wibus-wee/icalingua-theme-telegram/releases) 下载最新的构建版本。
 2. 在解压缩包后的目录下运行 `sh install.sh`。
 3. 重启 Icalingua++。
 
 ### Manual | 手动安装
 
-1. 下载最新的发布版本或从 Actions 下载最新的构建版本。
+1. 下载最新的发布版本或从 [CI Release](https://github.com/wibus-wee/icalingua-theme-telegram/releases) 下载最新的构建版本。
 2. 将 `addon.js`, `style.css`, `main.js` 复制到 Icalingua++ 的[数据目录](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus#%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95)
 3. 重启 Icalingua++。
 
