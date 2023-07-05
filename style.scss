@@ -558,23 +558,24 @@ div[message-actions] {
   border: none !important;
 }
 
-@media (prefers-color-scheme: dark) {
+/* ===== Dark mode ===== */
+html[theme=dark] {
   :root {
     --tg-panel-background: rgb(34, 34, 34);
     --tg-border-color: rgb(68, 68, 68);
     --tg-chatbox-background: rgb(47 47 47);
   }
-
+  
   .head,
   .vac-room-header,
   .root {
     background-color: var(--tg-panel-background) !important;
   }
-
+  
   .root {
     border-right: 0.3px solid var(--tg-border-color) !important;
   }
-
+  
   .root::after {
     content: "";
     position: absolute;
@@ -585,60 +586,60 @@ div[message-actions] {
     z-index: 1;
     background-color: var(--tg-border-color);
   }
-
+  
   .el-aside {
     border-width: 0.3px !important;
     border-color: var(--tg-border-color) !important;
   }
-
+  
   .chat-group .selected {
     --selected-color: rgb(11 96 254) !important;
   }
-
-
+  
+  
   .root .selected {
     background-color: rgb(6 74 192) !important;
   }
-
+  
   .root:hover .selected {
     background-color: rgb(6 74 192) !important;
   }
-
+  
   .vac-box-footer {
     border-color: var(--tg-border-color) !important;
   }
-
+  
   .el-badge__content--info {
     background-color: rgb(177 201 227) !important;
   }
-
+  
   .el-badge__content {
     color: rgb(1 1 1) !important;
     border-color: transparent !important;
   }
-
+  
   .vac-container-scroll {
     background-color: rgb(27 27 27) !important
   }
-
+  
   .vac-message-card {
     border: 0.5px solid rgb(68, 68, 68) !important;
   }
-
+  
   .vac-message-image-mod {
     background-color: var(--tg-chatbox-background) !important;
   }
-
+  
   .vac-message-card.vac-message-current {
     border: none;
     background-color: rgb(32 93 206) !important;
     color: rgb(254 254 254) !important;
   }
-
+  
   .el-input__inner {
     background-color: var(--tg-chatbox-background) !important;
   }
-
+  
   .panel-right,
   .bg,
   .grid,
@@ -648,20 +649,20 @@ div[message-actions] {
   .panel-right .head {
     background-color: var(--tg-chatbox-background) !important;
   }
-
+  
   .panel-right .title a.selected {
     background-color: rgb(65, 65, 65) !important;
     color: rgb(224, 224, 224) !important;
   }
-
+  
   .vac-text-username>span:first-child {
     color: rgb(48 211 58);
   }
-
+  
   .vac-reply-username {
     color: rgb(254, 254, 254) !important;
   }
-
+  
   .vac-reply-message {
     border-color: rgb(254, 254, 254) !important;
   }

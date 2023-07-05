@@ -4,6 +4,7 @@ declare global {
       dev: boolean,
       location: string,
       theme: "auto" | "light" | "dark",
+      systemTheme: "light" | "dark",
     }
   }
 }

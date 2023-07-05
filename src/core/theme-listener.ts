@@ -1,13 +1,24 @@
-import path from 'path';
-
-const fs = require('fs');
-
 export function themeListener() {
-  // 此处只能选择忽略自定义 config.yaml 路径的用户，因为暂时没有办法获取到用户的 config.yaml 路径（似乎）
-  if (!window.theme.location) { return; }
-  fs.watch(path.resolve(window.theme.location, 'config.yaml'), (eventType: string, filename: any) => {
-    if (eventType === 'change') {
-      
+  // https://github.com/wibus-wee/icalingua-theme-telegram/issues/21#issuecomment-1621126078
+  setInterval(async () => {
+    const settings = await require('electron').ipcRenderer.invoke('getSettings');
+    window.theme.theme = settings.theme;
+    const theme = settings.theme;
+    if (theme === 'auto') {
+      if (!window.theme.systemTheme) {
+        window.theme.systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute("theme", window.theme.systemTheme);
+    } else {
+      document.documentElement.setAttribute("theme", theme);
+    }
+  }, 500);
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    const newColorScheme = e.matches ? 'dark' : 'light';
+    if (window.theme.theme === 'auto') {
+      window.theme.systemTheme = newColorScheme;
+      document.documentElement.setAttribute('theme', newColorScheme);
     }
   });
 }

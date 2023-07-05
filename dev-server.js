@@ -4,9 +4,10 @@ import { watch } from "fs";
 const watcher = ["addon.js", "main.js", "style.css"]
 
 watch("./", { recursive: true }, (eventType, filename) => {
-  if (watcher.includes(filename) || filename.includes("telegram-theme")) {
-    execSync(`cp -r ${filename} ~/Library/Application\\ Support/icalingua/${filename}`)
-    console.log(`${filename} has been updated`)
+  if (watcher.includes(filename) || filename.includes("src")) {
+    console.log(`${filename} changed, recompiling...`)
+    execSync("sh replace.sh");
+    console.log("Recompilation complete")
   }
 })
 console.clear()
