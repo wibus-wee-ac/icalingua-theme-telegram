@@ -4,6 +4,12 @@ devDependencies:
   '@types/node':
     specifier: ^20.3.3
     version: 20.3.3
+  chalk:
+    specifier: ^5.3.0
+    version: 5.3.0
+  consola:
+    specifier: ^3.2.2
+    version: 3.2.2
   sass:
     specifier: ^1.63.6
     version: 1.63.6

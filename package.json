@@ -23,6 +23,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.3.3",
+    "chalk": "^5.3.0",
+    "consola": "^3.2.2",
     "sass": "^1.63.6",
     "typescript": "^5.1.6",
     "unbuild": "^1.2.1"
