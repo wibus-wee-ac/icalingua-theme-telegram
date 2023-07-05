@@ -2,7 +2,8 @@ declare global {
   interface Window {
     theme: {
       dev: boolean,
-      location: string
+      location: string,
+      theme: "auto" | "light" | "dark",
     }
   }
 }
