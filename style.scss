@@ -72,7 +72,6 @@ body {
 }
 
 .chat-group .selected::after {
-  /* ç±»ä¼¼äºŽ telegram é€‰ä¸­åŽçš„ä¸‹åˆ’çº¿ */
   content: "";
   position: absolute;
   bottom: 0;
@@ -276,11 +275,11 @@ div[message-actions] {
   font-size: 13px;
 }
 
-.vac-message-card .vac-message-content {
+.vac-message-card > div:not(.vac-text-timestamp) {
   margin-right: 43px !important;
 }
 
-.vac-message-current .vac-message-content {
+.vac-message-current > div:not(.vac-text-timestamp) {
   margin-right: 0 !important;
 }
 
