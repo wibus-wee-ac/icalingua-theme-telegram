@@ -3,7 +3,7 @@ window.onload = async function () {
   const settings = await require('electron').ipcRenderer.invoke('getSettings');
   window.theme = {
     dev: true,
-    location: decodeURIComponent(scriptElement.replace('addon.js', '').replace('file://', '')),
+    location: decodeURIComponent(scriptElement.replace('addon.js', '').replace('file:///', '')),
     theme: settings.theme,
   }
   const refineScript = document.createElement('script');
