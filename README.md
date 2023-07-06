@@ -110,6 +110,7 @@
 - 当 `dev` 为 `true` 且你启动了 `fileChangesListener` 时，当你对 JS 文件进行修改时，Icalingua++ 会自动重载窗口，对 CSS 文件修改时，Icalingua++ 会自动重载 CSS 文件。
 - 当 `dev` 为 `true` 时，全部功能都会启动，你无法通过 `manual` 或其他办法来关闭功能（除了删代码 🙂）。
 - 修改了 `config.js` 后，你需要重启 / 重载 Icalingua++ 才能使配置生效。
+- 你如果“不小心”填错了功能的 Key，你大可以放心这个功能是不会被启动的，并且在控制台会有错误警告。
 
 ## Preview
 
