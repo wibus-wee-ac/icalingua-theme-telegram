@@ -11,6 +11,6 @@ export function injectCustomRootStyle() {
     }
   `;
   document.head.appendChild(style);
-  createConsole('ADDON', 'inject custom root style success');
+  createConsole('InjectCustomRootStyle', 'Custom root style injected');
 }
 

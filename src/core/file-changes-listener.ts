@@ -1,3 +1,5 @@
+import { createConsole } from "../utils";
+
 const fs = require('fs');
 
 const watcher = ["addon.js", "main.js", "style.css"]
@@ -28,5 +30,6 @@ export function fileChangesListener() {
       }
     }
   })
+  createConsole('FileChangesListener', 'File changes listener listening');
 
 }

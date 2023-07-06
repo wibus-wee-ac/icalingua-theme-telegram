@@ -1,29 +1,6 @@
-import { betterImageDisplay } from "../functions/better-image-display";
-import { enhanceStickersDisplay } from "../functions/enhance-stickers-display";
-import { fixMessageContentWidth } from "../functions/fix-message-content-width";
-import { mergeSameUserMessage } from "../functions/merge-same-user-message";
-import { specialUsernameColor } from "../functions/special-username-color";
+import { Functions } from "../functions";
 import { IMessageUserList } from "../types";
-import { createConsole } from "../utils";
-
-function featuresFn(messageUserList: IMessageUserList) {
-  // === Feat1: Merge Same User Message ===
-  mergeSameUserMessage(messageUserList);
-  // === Feat2: Better image display ===
-  betterImageDisplay(messageUserList);
-  // === Feat3: Special Username Color ===
-  specialUsernameColor(messageUserList);
-  // === Feat4: Enhance Stickers Display ===
-  enhanceStickersDisplay(messageUserList);
-}
-
-function fixsFn(messageUserList: IMessageUserList) {
-  // === Fix1: Fix message content width ===
-  fixMessageContentWidth(messageUserList);
-  // === Fix(Better Image Display): Fix click event was destroyed ===
-  // createConsole("FIX", "Fix click event was destroyed")
-  // fixImageClickEvent(messageUserList);
-}
+import { createConsole, createConsoleGroup } from "../utils";
 
 /**
  * 修改聊天框，对聊天框进行深度定制
@@ -67,12 +44,38 @@ export function modifyChatBox() {
       });
     }
   });
-  featuresFn(messageUserList);
-  fixsFn(messageUserList);
+  Promise.all(
+    window.theme.chatbox.map((fn) => {
+      // 检查一下这个函数是否存在
+      if (!Functions[fn]) {
+        createConsole(
+          "ModifyChatBox",
+          `function ${fn} not found, remove it from chatbox list`
+        );
+        window.theme.chatbox = window.theme.chatbox.filter((f) => f !== fn); // 从列表里面删除这个函数
+        return Promise.resolve();
+      }
+      return Functions[fn](messageUserList);
+    })
+  );
 }
 
 export function modifyChatBoxInterval() {
-  createConsole("ADDON", "modify chat box interval");
+  createConsoleGroup(
+    "ModifyChatBox",
+    "these functions will be called",
+    window.theme.chatbox.map((f) => {
+      // 将短横线转换为驼峰
+      const text = f.replace(/-(\w)/g, function (_all, letter) {
+        return letter.toUpperCase();
+      }) as keyof typeof Functions;
+      const isFunctionExist = Functions[f] !== undefined;
+      return {
+        text: `${text} => ${isFunctionExist ? "✅" : "❌"}`,
+        type: isFunctionExist ? "log" : "warn",
+      };
+    })
+  );
   setInterval(() => {
     modifyChatBox();
   }, 500);
