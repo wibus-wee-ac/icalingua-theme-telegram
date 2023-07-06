@@ -50,6 +50,7 @@ export function getRoomsPanelWidth() {
 }
 
 export function createConsole(code: string, desc: string) {
+  if (!window.theme.log) return;
   console.log(
     `%c ${code} %c ${desc}`,
     "background: #eaeffd;color:#335eea;padding: 4px 6px;border-radius:3px;",
@@ -65,6 +66,7 @@ export function createConsoleGroup(
     type: "log" | "error" | "warn" | "info";
   }[]
 ) {
+  if (!window.theme.log) return;
   console.groupCollapsed(
     `%c ${code} %c ${desc}`,
     "background: #eaeffd;color:#335eea;padding: 4px 6px;border-radius:3px;",

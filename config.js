@@ -17,4 +17,5 @@ window.theme = {
     "theme-listener",
   ],
   manual: true,
+  log: true,
 }

@@ -11,6 +11,7 @@ declare global {
       chatbox: FunctionsKey[],
       core: CoresKey[],
       manual: boolean, // 是否手动控制功能启动
+      log: boolean, // 是否打印日志
     }
   }
 }
