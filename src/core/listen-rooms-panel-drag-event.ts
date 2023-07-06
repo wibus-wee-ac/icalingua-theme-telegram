@@ -1,4 +1,4 @@
-import { getRoomsPanelWidth, getRootStyle, setRootStyle } from '../utils.js';
+import { createConsole, getRoomsPanelWidth, getRootStyle, setRootStyle } from '../utils.js';
 
 export function listenRoomsPanelDragEvent() {
   const elMain = document.querySelector('div.el-main.multipane.layout-v');
@@ -10,5 +10,6 @@ export function listenRoomsPanelDragEvent() {
         setRootStyle('rooms-panel-width', roomsPanelWidth);
       }
     });
+    createConsole('ListenRoomsPanelDragEvent', 'Rooms panel drag event listening');
   }
 }

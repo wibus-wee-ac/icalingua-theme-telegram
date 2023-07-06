@@ -1,3 +1,5 @@
+import { createConsole } from "../utils";
+
 export function themeListener() {
   // https://github.com/wibus-wee/icalingua-theme-telegram/issues/21#issuecomment-1621126078
   setInterval(async () => {
@@ -21,4 +23,6 @@ export function themeListener() {
       document.documentElement.setAttribute('theme', newColorScheme);
     }
   });
+
+  createConsole('ThemeListener', 'Theme listener listening');
 }

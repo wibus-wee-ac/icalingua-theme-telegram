@@ -4,7 +4,7 @@ import chalk from "chalk";
 import path from "path";
 import consola from "consola";
 console.clear()
-const watcher = ["addon.js", "style.scss"]
+const watcher = ["addon.js", "style.scss", "config.js"]
 const cache = {};
 const pwd = execSync("pwd", { encoding: "utf-8" }).trim()
 function cacheFiles(dir) {

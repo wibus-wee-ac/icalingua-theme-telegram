@@ -45,7 +45,8 @@ export function getRootStyle(key: any) {
 }
 
 export function getRoomsPanelWidth() {
-  return (document.getElementsByClassName("rooms-panel")[0] as HTMLElement).style.width;
+  return (document.getElementsByClassName("rooms-panel")[0] as HTMLElement)
+    .style.width;
 }
 
 export function createConsole(code: string, desc: string) {
@@ -54,4 +55,23 @@ export function createConsole(code: string, desc: string) {
     "background: #eaeffd;color:#335eea;padding: 4px 6px;border-radius:3px;",
     "background:unset;color:unset;"
   );
+}
+
+export function createConsoleGroup(
+  code: string,
+  desc: string,
+  group: {
+    text: string;
+    type: "log" | "error" | "warn" | "info";
+  }[]
+) {
+  console.groupCollapsed(
+    `%c ${code} %c ${desc}`,
+    "background: #eaeffd;color:#335eea;padding: 4px 6px;border-radius:3px;",
+    "background:unset;color:unset;"
+  );
+  group.forEach((item) => {
+    console[item.type](item.text);
+  });
+  console.groupEnd();
 }
