@@ -32,7 +32,7 @@
 - 由于 Icalingua++ 的限制，我改变了消息列表的 DOM 结构，所以我暂时无法实现点击图片放大的功能。后续可能我会尝试重写灯箱来实现这个功能。[Issue #16](https://github.com/wibus-wee/icalingua-theme-telegram/issues/16)
 - 它**强制改变**了很多原本的**DOM结构**，这可能会导致一些功能出现问题，如果你发现了这些问题，欢迎提交 [Issue](https://github.com/wibus-wee/icalingua-theme-telegram/issues)。
 - 由于我们想要增强聊天功能，我们可能需要另外启动一个子进程来处理一些信息。如果你**不信任我 / 不信任仓库代码**，你可以不使用这个主题。
-- 在 [#32](https://github.com/wibus-wee/icalingua-theme-telegram/pull/32) 中，我实现了手动控制功能启动功能，你现在可以在 `config.js` 中设置你想要启动的功能了，你也可以将 `manual` 设置为 `false` 来启动所有功能。
+- 在 [#32](https://github.com/wibus-wee/icalingua-theme-telegram/pull/32) 中，我实现了手动控制功能启动功能，你现在可以在 `config.js` 中设置你想要启动的功能了，你也可以将 `manual` 设置为 `false` 来启动所有功能。有关更多配置信息，请参阅 [Config | 配置](#config--配置)。
 
 ## Features | 特性
 
@@ -61,7 +61,7 @@
 2. 将 `addon.js`, `style.css`, `main.js` 复制到 Icalingua++ 的[数据目录](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus#%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95)
 3. 重启 Icalingua++。
 
-## Addon.js
+## Enhancements & Feat. | 增强 & 新功能
 
 这个文件用于帮助一些由于 DOM 结构的原因无法直接通过改变 CSS 实现目标样式的元素。已经实现的功能有：
 
@@ -71,12 +71,45 @@
 - [x] 移除回复消息的图标并改为点击即可回复消息的样式。
 - [x] 为每个用户名分配不同的颜色。
 - [x] 自动重载 CSS 和 JS 文件。
+- [x] 手动控制功能启动功能。
+- [ ] 全新的图像显示器。
+- [ ] 主题自动更新器。
 - [ ] 用 Telegram 风格的图标替换图标。
 - [ ] 更改模态框的样式，使其更加美观。
 - [ ] 鼠标滑动以回复消息
 
 
 ## Config | 配置
+
+在 [#32](https://github.com/wibus-wee/icalingua-theme-telegram/pull/32) 中，我们引入了一个新的配置文件 `config.js`，你可以在这个文件中配置你想要启动的功能。有关这个文件的配置项定义，你可以前往 [types.d.ts](./types.d.ts) 查看。在此我简单介绍一下配置项：
+
+> **Note**
+> 
+> **不知道咋写的先学下 JavaScript 吧，或者将 `manual` 设置为 false，这样所有功能都会启动。**
+
+### core -- 启动的核心功能。
+
+你可以去前往 [core](./src/core//index.ts) 查看所有的核心功能。你需要填入的是核心功能的 Key。如：
+
+在文件里有一行代码：
+
+```ts
+"modify-chat-box-interval": modifyChatBoxInterval,
+```
+
+我想启动这个功能，那么你在 config.js 的 core 中需要填入的是 [`modify-chat-box-interval`]，以此类推。
+
+### chatbox --- 启动的聊天框修改功能
+
+与 [core](#core----启动的核心功能) 类似，你可以去前往 [chatbox](./src/functions/index.ts) 查看所有的聊天框修改功能。你需要填入的是聊天框修改功能的 Key。
+
+
+### 其他注意事项
+
+- 你可以在 `config.js` 中设置 `manual` 为 `false` 来启动所有功能。
+- 当 `dev` 为 `true` 且你启动了 `fileChangesListener` 时，当你对 JS 文件进行修改时，Icalingua++ 会自动重载窗口，对 CSS 文件修改时，Icalingua++ 会自动重载 CSS 文件。
+- 当 `dev` 为 `true` 时，全部功能都会启动，你无法通过 `manual` 或其他办法来关闭功能（除了删代码 🙂）。
+- 修改了 `config.js` 后，你需要重启 / 重载 Icalingua++ 才能使配置生效。
 
 ## Preview
 
