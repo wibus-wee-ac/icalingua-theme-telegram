@@ -32,6 +32,7 @@
 - 由于 Icalingua++ 的限制，我改变了消息列表的 DOM 结构，所以我暂时无法实现点击图片放大的功能。后续可能我会尝试重写灯箱来实现这个功能。[Issue #16](https://github.com/wibus-wee/icalingua-theme-telegram/issues/16)
 - 它**强制改变**了很多原本的**DOM结构**，这可能会导致一些功能出现问题，如果你发现了这些问题，欢迎提交 [Issue](https://github.com/wibus-wee/icalingua-theme-telegram/issues)。
 - 由于我们想要增强聊天功能，我们可能需要另外启动一个子进程来处理一些信息。如果你**不信任我 / 不信任仓库代码**，你可以不使用这个主题。
+- 在 [#32](https://github.com/wibus-wee/icalingua-theme-telegram/pull/32) 中，我实现了手动控制功能启动功能，你现在可以在 `config.js` 中设置你想要启动的功能了，你也可以将 `manual` 设置为 `false` 来启动所有功能。
 
 ## Features | 特性
 
@@ -74,6 +75,8 @@
 - [ ] 更改模态框的样式，使其更加美观。
 - [ ] 鼠标滑动以回复消息
 
+
+## Config | 配置
 
 ## Preview
 

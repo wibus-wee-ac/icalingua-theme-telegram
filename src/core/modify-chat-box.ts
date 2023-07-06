@@ -1,6 +1,6 @@
 import { Functions } from "../functions";
 import { IMessageUserList } from "../types";
-import { createConsole, createConsoleGroup } from "../utils";
+import { createConsoleGroup } from "../utils";
 
 /**
  * 修改聊天框，对聊天框进行深度定制
@@ -46,15 +46,6 @@ export function modifyChatBox() {
   });
   Promise.all(
     window.theme.chatbox.map((fn) => {
-      // 检查一下这个函数是否存在
-      if (!Functions[fn]) {
-        createConsole(
-          "ModifyChatBox",
-          `function ${fn} not found, remove it from chatbox list`
-        );
-        window.theme.chatbox = window.theme.chatbox.filter((f) => f !== fn); // 从列表里面删除这个函数
-        return Promise.resolve();
-      }
       return Functions[fn](messageUserList);
     })
   );
@@ -63,13 +54,16 @@ export function modifyChatBox() {
 export function modifyChatBoxInterval() {
   createConsoleGroup(
     "ModifyChatBox",
-    "these functions will be called",
+    "These functions will be called:",
     window.theme.chatbox.map((f) => {
       // 将短横线转换为驼峰
       const text = f.replace(/-(\w)/g, function (_all, letter) {
         return letter.toUpperCase();
       }) as keyof typeof Functions;
       const isFunctionExist = Functions[f] !== undefined;
+      if (!isFunctionExist) {
+        window.theme.chatbox = window.theme.chatbox.filter((item) => item !== f);
+      }
       return {
         text: `${text} => ${isFunctionExist ? "✅" : "❌"}`,
         type: isFunctionExist ? "log" : "warn",

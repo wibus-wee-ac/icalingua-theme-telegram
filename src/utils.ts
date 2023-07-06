@@ -65,7 +65,7 @@ export function createConsoleGroup(
     type: "log" | "error" | "warn" | "info";
   }[]
 ) {
-  console.group(
+  console.groupCollapsed(
     `%c ${code} %c ${desc}`,
     "background: #eaeffd;color:#335eea;padding: 4px 6px;border-radius:3px;",
     "background:unset;color:unset;"

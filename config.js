@@ -8,4 +8,13 @@ window.theme = {
     "fix-message-content-width",
   ],
   dev: true,
+  core: [
+    "inject-custom-root-style",
+    "listen-rooms-panel-drag-event",
+    "modify-chat-box-interval",
+    "refined-image-gallery",
+    "file-changes-listener",
+    "theme-listener",
+  ],
+  manual: true,
 }
