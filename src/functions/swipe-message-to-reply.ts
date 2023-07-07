@@ -15,8 +15,6 @@ function handleSwipeLeft(
   element.classList.add("swipe-left"); // 添加 class，防止重复绑定事件
 
   function handleWheel(event: WheelEvent): void {
-    if (isMoving) return;
-
     const deltaX = event.deltaX;
 
     if (direction === "left") {
@@ -24,7 +22,9 @@ function handleSwipeLeft(
 
       // 添加过渡效果
       element.style.transition = "transform 0.3s";
-      element.style.transform = `translateX(-${deltaX}%)`;
+      // element.style.transform = `translateX(${deltaX}%)`;
+      const originDeltaX = Number(element.style.transform.match(/-?\d+/)?.[0]);
+      element.style.transform = `translateX(${originDeltaX + deltaX}%)`;
       callback();
 
       // 等待过渡结束后重置样式和 isMoving 标志
