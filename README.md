@@ -13,10 +13,6 @@
 
 一个基于 [Icalingua++](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus) 的 Telegram 风格主题。
 
-<pre align="center">
-🧪 Working in Progress
-</pre>
-
 ## Motivation | 动机
 
 我非常喜欢 Telegram Desktop 的 UI，但是在很多时候我都没法访问 Telegram，并且地区使用习惯的原因，我很难使用 Telegram，而是使用 QQ。
