@@ -52,14 +52,25 @@
 ### Automatic | 自动安装
 
 1. 下载最新的发布版本或从 [CI Release](https://github.com/wibus-wee/icalingua-theme-telegram/releases) 下载最新的构建版本。
-2. 在解压缩包后的目录下运行 `sh install.sh`。
-3. 重启 Icalingua++。
+2. 给予执行权限 `chmod +x install.sh`
+3. 在解压缩包后的目录下运行 `./install.sh`。
+4. 重启 Icalingua++。
 
 ### Manual | 手动安装
 
+#### 从 CI 下载
+
 1. 下载最新的发布版本或从 [CI Release](https://github.com/wibus-wee/icalingua-theme-telegram/releases) 下载最新的构建版本。
-2. 将 `addon.js`, `style.css`, `main.js` 复制到 Icalingua++ 的[数据目录](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus#%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95)
+2. 将 `addon.js`, `style.css`, `main.js`, `config.js` 复制到 Icalingua++ 的[数据目录](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus#%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95)
 3. 重启 Icalingua++。
+
+#### 从源码安装
+
+1. 克隆这个仓库。
+2. 安装依赖 `pnpm install`。
+3. 给予执行权限 `chmox +x replace.sh`。
+4. 运行 `./replace.sh`。
+5. 重启 Icalingua++。
 
 ## Enhancements & Feat. | 增强 & 新功能
 
@@ -78,16 +89,15 @@
 - [ ] 更改模态框的样式，使其更加美观。
 - [ ] 鼠标滑动以回复消息
 
-
 ## Config | 配置
 
 在 [#32](https://github.com/wibus-wee/icalingua-theme-telegram/pull/32) 中，我们引入了一个新的配置文件 `config.js`，你可以在这个文件中配置你想要启动的功能。有关这个文件的配置项定义，你可以前往 [types.d.ts](./types.d.ts) 查看。在此我简单介绍一下配置项：
 
 > **Note**
-> 
+>
 > **不知道咋写的先学下 JavaScript 吧，或者将 `manual` 设置为 false，这样所有功能都会启动。**
 
-### core -- 启动的核心功能。
+### core -- 启动的核心功能
 
 你可以去前往 [core](./src/core//index.ts) 查看所有的核心功能。你需要填入的是核心功能的 Key。如：
 
@@ -103,7 +113,6 @@
 
 与 [core](#core----启动的核心功能) 类似，你可以去前往 [chatbox](./src/functions/index.ts) 查看所有的聊天框修改功能。你需要填入的是聊天框修改功能的 Key。
 
-
 ### 其他注意事项
 
 - 你可以在 `config.js` 中设置 `manual` 为 `false` 来启动所有功能。
@@ -118,7 +127,6 @@
 |Light|Dark|
 |---|---|
 |<img alt="light" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/841d7e5e-5e82-4373-9983-f61903879c86">|<img  alt="dark" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/e07826bd-99a8-49fb-96b6-c7dad19cf16e">|
-
 
 ## Author
 
