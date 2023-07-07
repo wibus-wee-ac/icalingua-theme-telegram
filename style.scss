@@ -263,7 +263,7 @@ html[theme=light] .vac-message-current.vac-message-selected {
 .vac-message-container--image .vac-message-card {
   border: none;
   padding: 0 !important;
-  background-color: transparent !important;
+  background: transparent !important;
 }
 
 .vac-message-container--image .vac-message-selected .vac-image-tg-container .vac-image-tg-container__image img {
@@ -306,6 +306,7 @@ html[theme=light] .vac-message-current.vac-message-selected {
 
 .vac-message-current>div>div>a {
   color: rgb(254, 254, 254) !important;
+  text-decoration: underline !important;
 }
 
 .vac-card-date {
@@ -697,5 +698,6 @@ html[theme=dark] {
 
   .vac-message-container--image .vac-message-card {
     border: none !important;
+    background: transparent !important;
   }
 }
