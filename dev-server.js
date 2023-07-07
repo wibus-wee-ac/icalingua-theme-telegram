@@ -34,7 +34,7 @@ watch("./", { recursive: true }, (eventType, filename) => {
       return
     }
     // 更新缓存
-    cache[filename] = readFileSync(filename)
+    cache[filename] = readFileSync(filename);
     consola.info(`${chalk.cyan("[Cache]")} ${chalk.green(filename)} updated`)
     // consola.info(`${filename} changed, recompiling...`)
     if (isCompiling) {
@@ -43,7 +43,7 @@ watch("./", { recursive: true }, (eventType, filename) => {
     }
     consola.info(`${chalk.bold(chalk.blue("[Dev]"))} Recompiling...`)
     isCompiling = true
-    execSync("sh replace.sh");
+    execSync("sh replace.sh", { stdio: "ignore" });
     // consola.info("Recompilation complete")
   }
 })
