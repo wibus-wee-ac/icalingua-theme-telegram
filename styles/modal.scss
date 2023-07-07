@@ -1,0 +1,86 @@
+
+// Dialog
+.el-dialog {
+  --background: #fff;
+  border-radius: 15px !important;
+  box-shadow: none !important;
+  background: var(--background) !important;
+  width: 35% !important;
+}
+
+.el-dialog__title {
+  display: none;
+}
+
+.el-dialog__headerbtn {
+  left: 14px !important;
+  right: initial !important;
+  top: 26px !important;
+  font-size: 18px !important;
+  border-radius: 100%;
+  border: 1px solid #7070ee;
+  width: 28px;
+  height: 28px;
+  cursor: default !important;
+}
+
+.el-dialog__close.el-icon.el-icon-close {
+  color: #7070ee !important;
+}
+
+.dialog .el-dialog__body,
+.el-dialog__header {
+  --background: transparent;
+  background-color: var(--background) !important;
+}
+
+.el-dialog__header {
+  border-radius: 12px 12px 0 0;
+  padding: 5px 20px 10px !important;
+  cursor: default !important;
+}
+
+.el-tabs__item {
+  cursor: default !important;
+}
+
+.el-dialog__body {
+  border-radius: 0 0 15px 15px;
+  padding: 5px 20px 30px 20px !important;
+}
+
+.contacts-head-container {
+  background-color: transparent !important;
+  margin-bottom: 10px;
+  margin-left: 35px;
+}
+
+.el-collapse-item__header,
+.el-collapse-item__content {
+  --background: transparent;
+  background: var(--background) !important;
+}
+
+.contact-entry-left .el-avatar {
+  --size: 30px;
+}
+
+.contact-entry-entry {
+  padding: 0 !important;
+}
+
+.contact-entry-name {
+  font-size: 15px;
+}
+
+.contacts-root {
+  height: 78vh !important;
+}
+
+.el-tab-pane {
+  margin-top: 10px;
+}
+
+.contact-entry-root {
+  background: transparent !important;
+}
