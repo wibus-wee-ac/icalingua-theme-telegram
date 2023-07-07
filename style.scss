@@ -252,6 +252,14 @@ div[message-actions] {
   padding: 6px 58px 6px 14px !important;
 }
 
+.vac-message-selected {
+  --chat-message-bg-color-selected: rgb(255 230 230) !important
+}
+
+html[theme=light] .vac-message-current.vac-message-selected {
+  background-color: rgb(32, 93, 206) !important
+}
+
 .vac-text-username {
   display: block !important;
 }
@@ -664,5 +672,13 @@ html[theme=dark] {
   
   .vac-reply-message {
     border-color: rgb(254, 254, 254) !important;
+  }
+
+  .vac-message-selected {
+    --chat-message-bg-color-selected: #494949 !important;
+  }
+  
+  .vac-message-current.vac-message-selected {
+    background-color: rgb(97, 151, 206) !important;
   }
 }
