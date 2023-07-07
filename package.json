@@ -1,7 +1,7 @@
 {
   "name": "icalingua-theme-telegram",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "A Telegram-like theme based on icalingua++",
   "type": "module",
   "scripts": {
     "dev": "node dev-server.js",
@@ -10,29 +10,23 @@
     "typecheck": "tsc --noEmit",
     "hook:done": "sh .github/build_done.sh"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/main.mjs"
-    }
-  },
-  "main": "./dist/main.mjs",
-  "files": [
-    "dist"
+  "keywords": [
+    "telegram",
+    "theme",
+    "icalingua",
+    "icalingua++"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "wibus-wee <wibus@qq.com>",
+  "license": "AGPL-3.0",
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.1.0",
     "@types/node": "^20.3.3",
     "chalk": "^5.3.0",
     "consola": "^3.2.2",
+    "rollup": "^3.26.1",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-ts": "^3.2.0",
     "sass": "^1.63.6",
     "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "@rollup/plugin-node-resolve": "^15.1.0",
-    "rollup": "^3.26.1"
   }
 }
