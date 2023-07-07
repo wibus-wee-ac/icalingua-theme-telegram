@@ -67,8 +67,8 @@
 
 1. 克隆这个仓库。
 2. 安装依赖 `pnpm install`。
-3. 给予执行权限 `chmod +x replace.sh`。
-4. 运行 `./replace.sh`。
+3. 给予执行权限 `chmod +x dist/install.sh`。
+4. 运行 `./dist/install.sh`。
 5. 重启 Icalingua++。
 
 ## Enhancements & Feat. | 增强 & 新功能
