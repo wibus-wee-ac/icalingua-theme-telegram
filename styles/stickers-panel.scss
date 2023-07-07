@@ -11,7 +11,7 @@
   position: relative;
 }
 
-.bg > div:not(.head) {
+.bg > div:not(.head):not(.stickers_dir):not(.emoji-panel) {
   margin-bottom: 55px;
 }
 
