@@ -13,7 +13,7 @@ export function betterImageDisplay(messageUserList: IMessageUserList) {
     // 判断下生成了没有
     if (
       messageElement
-        .querySelector(".vac-message-container")
+        .querySelector(".vac-message-card")
         ?.querySelector(".vac-image-tg-container")
     ) {
       return;
@@ -58,15 +58,24 @@ export function betterImageDisplay(messageUserList: IMessageUserList) {
     `;
     // Thanks to @dmlgzs for this fix: https://github.com/wibus-wee/icalingua-theme-telegram/issues/21#issuecomment-1621200630
     newMessageImageContainer.onclick = () => {
-      require('electron').ipcRenderer.send('openImage', messageImageSrc);
+      // 检查一下有没有 vac-forward-container
+      const forwardContainer = document.querySelector(".vac-forward-container");
+      if (!forwardContainer) {
+        require("electron").ipcRenderer.send("openImage", messageImageSrc);
+      }
     };
-    (
-      messageElement.querySelector(
-        ".vac-message-container .vac-message-card"
-      ) as HTMLElement
-    ).style.display = "none"; // 隐藏原来的消息
-    (
-      messageElement.querySelector(".vac-message-container") as HTMLElement
-    ).appendChild(newMessageImageContainer); // 添加新的图片容器
+    const messageCard = messageElement.querySelector(
+      ".vac-message-container .vac-message-card"
+    ) as HTMLElement;
+    // 把里面所有内容 hidden 掉
+    Array.from(messageCard.querySelectorAll("*")).forEach((element) => {
+      (element as HTMLElement).style.display = "none";
+    });
+    // 然后把新的图片容器添加进去
+    messageCard.appendChild(newMessageImageContainer); // 添加新的图片容器
+    // 并且要设置多一个 class 以便于我们在 CSS 里面控制不显示垃圾边框
+    messageElement
+      .querySelector(".vac-message-container")
+      ?.classList.add("vac-message-container--image");
   });
 }

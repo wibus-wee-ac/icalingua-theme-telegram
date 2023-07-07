@@ -1,19 +1,44 @@
 #!/usr/bin/env bash
-# Check if the system is macOS
-if [ "$(uname)" == "Darwin" ]; then
-   cp main.js ~/Library/Application\ Support/icalingua
-   cp style.css ~/Library/Application\ Support/icalingua
-   cp addon.js ~/Library/Application\ Support/icalingua
-   cp config.js ~/Library/Application\ Support/icalingua
-   echo "Done."
-# Check if the system is Linux
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-   cp style.css ~/.config/icalingua
-   cp addon.js ~/.config/icalingua
-   cp config.js ~/.config/icalingua
-   cp main.js ~/.config/icalingua
-   echo "Done."
 
+# Define the destination directory path
+if [ "$(uname)" == "Darwin" ]; then
+   destination_dir=~/Library/Application\ Support/icalingua
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+   destination_dir=~/.config/icalingua
 else
    echo "Sorry, your system is not supported."
+   exit 1
+fi
+
+# Copy the files to the destination directory
+cp_files() {
+   cp "$1" "$destination_dir"
+}
+
+# Copy the file and prompt for overwrite if necessary (only for config.js)
+copy_file_with_prompt() {
+   local file="$1"
+   local dest_path="$destination_dir/$file"
+   if [ "$file" == "config.js" ]; then
+      if [ -f "$dest_path" ]; then
+         echo "The file 'config.js' already exists in the destination directory."
+         read -p "Do you want to overwrite it? (y/n): " answer
+         if [ "$answer" == "y" ]; then
+            cp_files "$file"
+         fi
+      else
+         cp_files "$file"
+      fi
+   else
+      cp_files "$file"
+   fi
+}
+
+# Copy the files based on the system type
+if [ -n "$destination_dir" ]; then
+   copy_file_with_prompt "main.js"
+   copy_file_with_prompt "style.css"
+   copy_file_with_prompt "addon.js"
+   copy_file_with_prompt "config.js"
+   echo "Done."
 fi
