@@ -6,6 +6,7 @@ window.theme = {
     "special-username-color",
     "better-image-display",
     "fix-message-content-width",
+    "swipe-message-to-reply",
   ],
   dev: true,
   core: [
