@@ -13,6 +13,7 @@ window.onload = async function () {
       ...window.theme,
       location: decodeURIComponent(scriptElement.replace('addon.js', '').replace('file:///', '')),
       theme: settings.theme,
+      localImageViewerByDefault: settings.localImageViewerByDefault,
     };
     
     document.head.appendChild(refineScript);

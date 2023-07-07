@@ -61,7 +61,7 @@ export function betterImageDisplay(messageUserList: IMessageUserList) {
       // 检查一下有没有 vac-forward-container
       const forwardContainer = document.querySelector(".vac-forward-container");
       if (!forwardContainer) {
-        require("electron").ipcRenderer.send("openImage", messageImageSrc);
+        require("electron").ipcRenderer.send("openImage", messageImageSrc, window.theme.localImageViewerByDefault);
       }
     };
     const messageCard = messageElement.querySelector(
