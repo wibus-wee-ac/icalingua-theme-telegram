@@ -3,7 +3,9 @@ import { readFileSync, readdirSync, watch } from "fs";
 import chalk from "chalk";
 import path from "path";
 import consola from "consola";
+
 console.clear()
+let isCompiling = false; // 是否正在编译(防止多次编译)
 const watcher = ["addon.js", "style.scss", "config.js"]
 const cache = {};
 const pwd = execSync("pwd", { encoding: "utf-8" }).trim()
@@ -35,7 +37,12 @@ watch("./", { recursive: true }, (eventType, filename) => {
     cache[filename] = readFileSync(filename)
     consola.info(`${chalk.cyan("[Cache]")} ${chalk.green(filename)} updated`)
     // consola.info(`${filename} changed, recompiling...`)
+    if (isCompiling) {
+      consola.info(`${chalk.bold(chalk.blue("[Dev]"))} Recompilation in progress, refusing to recompile`)
+      return;
+    }
     consola.info(`${chalk.bold(chalk.blue("[Dev]"))} Recompiling...`)
+    isCompiling = true
     execSync("sh replace.sh");
     // consola.info("Recompilation complete")
   }
