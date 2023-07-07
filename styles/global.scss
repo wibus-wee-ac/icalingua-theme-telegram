@@ -1,0 +1,12 @@
+body {
+  background-color: var(--tg-panel-background) !important;
+}
+
+body {
+  --tg-panel-background: rgb(255, 255, 255);
+  --tg-chatbox-background: rgb(245 245 245);
+}
+
+* {
+  font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}

@@ -1,0 +1,80 @@
+
+.vac-box-footer {
+  border-top: 1px solid rgb(221, 221, 221) !important;
+  background-color: var(--tg-panel-background) !important;
+  padding: 5px 10px !important;
+}
+
+.vac-reply-container {
+  background-color: var(--tg-panel-background) !important;
+  margin-bottom: 10px;
+  padding: 5px 5px 0 10px;
+}
+
+.vac-reply-box {
+  background-color: var(--tg-panel-background) !important;
+  border-radius: 0 !important;
+  border-left: 2px solid rgb(131, 98, 206) !important;
+}
+
+.vac-textarea {
+  border: none !important;
+  font-size: 14px !important;
+  margin-left: 35px !important;
+}
+
+.vac-icon-textarea {
+  margin-bottom: 10px;
+}
+
+/* file upload */
+.vac-icon-textarea > :nth-child(2) {
+  position: absolute;
+  left: 10px;
+}
+
+.vac-textarea::-webkit-input-placeholder {
+  color: rgb(153, 153, 153) !important;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.vac-textarea:focus::-webkit-input-placeholder {
+  transform: translateX(5px);
+}
+
+#vac-icon-emoji,
+#vac-icon-paperclip,
+#vac-icon-close-outline {
+  transition: all 0.2s ease-in-out;
+  fill: rgb(153, 153, 153) !important;
+  transform-origin: center center;
+}
+
+#vac-icon-paperclip {
+  transform: rotate(30deg);
+}
+
+.vac-svg-button {
+  cursor: default !important;
+}
+
+.vac-svg-button:hover {
+  transform: none;
+  opacity: 1;
+}
+
+.vac-svg-button:hover #vac-icon-emoji,
+.vac-svg-button:hover #vac-icon-paperclip {
+  fill: var(--chat-icon-color-emoji) !important;
+}
+
+#vac-icon-send {
+  transition: all 0.2s ease-in-out;
+}
+
+.vac-svg-button svg {
+  --size: 25px;
+  width: var(--size) !important;
+  height: var(--size) !important;
+}
