@@ -260,6 +260,19 @@ html[theme=light] .vac-message-current.vac-message-selected {
   background-color: rgb(32, 93, 206) !important
 }
 
+.vac-message-container--image .vac-message-card {
+  border: none;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+.vac-message-container--image .vac-message-selected .vac-image-tg-container .vac-image-tg-container__image img {
+  // 亮 & 提高对比度
+  filter: brightness(1.5) contrast(1.5);
+  transition: all 0.2s ease-in-out;
+}
+
+
 .vac-text-username {
   display: block !important;
 }
@@ -467,7 +480,7 @@ html[theme=light] .vac-message-current.vac-message-selected {
 
 .vac-image-tg-container__timestamp {
   position: absolute;
-  right: 5px;
+  right: -5px;
   bottom: 15px;
   font-style: italic;
   opacity: .7 !important;
@@ -680,5 +693,9 @@ html[theme=dark] {
   
   .vac-message-current.vac-message-selected {
     background-color: rgb(97, 151, 206) !important;
+  }
+
+  .vac-message-container--image .vac-message-card {
+    border: none !important;
   }
 }
