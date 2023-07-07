@@ -3,7 +3,7 @@
  * @references Telegram Desktop Style
  */
 
-body {
+ body {
   background-color: var(--tg-panel-background) !important;
 }
 
@@ -583,6 +583,14 @@ html[theme=light] .vac-message-current.vac-message-selected {
   border: none !important;
 }
 
+.container-search input {
+  background: var(--tg-panel-background) !important;
+}
+
+.transition-element {
+  transition: transform 0.3s;
+}
+
 /* ===== Dark mode ===== */
 html[theme=dark] {
   body {
@@ -703,5 +711,9 @@ html[theme=dark] {
   .vac-message-container--image .vac-message-card {
     border: none !important;
     background: transparent !important;
+  }
+
+  .panel-right div.head {
+    border-color: var(--tg-border-color) !important;
   }
 }
