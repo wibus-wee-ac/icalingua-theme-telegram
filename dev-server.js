@@ -44,6 +44,7 @@ watch("./", { recursive: true }, (eventType, filename) => {
     consola.info(`${chalk.bold(chalk.blue("[Dev]"))} Recompiling...`)
     isCompiling = true
     execSync("sh replace.sh", { stdio: "ignore" });
+    isCompiling = false
     // consola.info("Recompilation complete")
   }
 })
