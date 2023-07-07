@@ -4,6 +4,9 @@ dependencies:
   '@rollup/plugin-node-resolve':
     specifier: ^15.1.0
     version: 15.1.0(rollup@3.26.1)
+  css-spring:
+    specifier: ^4.1.0
+    version: 4.1.0
   rollup:
     specifier: ^3.26.1
     version: 3.26.1
@@ -406,6 +409,12 @@ packages:
       '@types/node': 17.0.45
     dev: true
 
+  /css-spring@4.1.0:
+    resolution: {integrity: sha512-RdA4NuRNk2xChTSo+52P2jlfr+rUgNY94mV7uHrCeDPvaUtFZgW6LMoCy4xEX3HphZ7LLkCHiUY5PBSegFBE3A==}
+    dependencies:
+      lodash: 4.17.21
+    dev: false
+
   /debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -564,6 +573,10 @@ packages:
   /jsonc-parser@3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
     dev: true
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
 
   /lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}

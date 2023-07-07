@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@rollup/plugin-node-resolve": "^15.1.0",
+    "css-spring": "^4.1.0",
     "rollup": "^3.26.1"
   }
 }
