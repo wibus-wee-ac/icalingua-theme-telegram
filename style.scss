@@ -506,6 +506,10 @@ html[theme=light] .vac-message-current.vac-message-selected {
   position: relative;
 }
 
+.bg > div:not(.head) {
+  margin-bottom: 55px;
+}
+
 .vac-fade-stickers-enter-active {
   transform-origin: bottom right;
   will-change: scale;
