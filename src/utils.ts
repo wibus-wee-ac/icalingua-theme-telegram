@@ -45,8 +45,8 @@ export function getRootStyle(key: any) {
 }
 
 export function getRoomsPanelWidth() {
-  return (document.getElementsByClassName("rooms-panel")[0] as HTMLElement)
-    .style.width;
+  return (document.getElementsByClassName("rooms-panel")[0] as HTMLElement || undefined)
+    ?.style.width;
 }
 
 export function createConsole(code: string, desc: string) {

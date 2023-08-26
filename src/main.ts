@@ -3,7 +3,8 @@ import { Functions } from "./functions";
 import { createConsole, createConsoleGroup, getRoomsPanelWidth } from "./utils";
 
 function init() {
-  if (!getRoomsPanelWidth()) {
+  // #app > .vac-col-messages 是用于判断是否在「转发聊天页面」页面
+  if (!getRoomsPanelWidth() && !document.querySelector("#app > .vac-col-messages")) {
     setTimeout(init, 1000);
     createConsole("ADDON", "rooms-panel not found, try again after 1s");
     return;
