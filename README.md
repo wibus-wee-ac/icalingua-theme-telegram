@@ -1,11 +1,5 @@
 <div>
-  <a href="https://github.com/wibus-wee/icalingua-theme-telegram">
-  <img align="right" width="200" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/563396b0-9211-409a-9136-74a6f3cad037#gh-light-mode-only" />
-  </a>
-
-  <a href="https://github.com/wibus-wee/icalingua-theme-telegram">
-  <img align="right" width="200" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/115cdb16-88fa-4ba6-9a14-32b9ab669b1b#gh-dark-mode-only" />
-  </a>
+<img align="right" width="200" src="https://github.com/wibus-wee/icalingua-theme-telegram/assets/62133302/115cdb16-88fa-4ba6-9a14-32b9ab669b1b#gh-dark-mode-only" />
 
 </div>
 
