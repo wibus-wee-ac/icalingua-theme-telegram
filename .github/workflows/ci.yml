@@ -19,7 +19,7 @@ jobs:
       - name: Set node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: latest
 
       - name: Setup
         run: npm i -g @antfu/ni
@@ -38,7 +38,7 @@ jobs:
       - name: Set node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: latest
 
       - name: Setup
         run: npm i -g @antfu/ni
